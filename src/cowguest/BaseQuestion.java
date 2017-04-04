@@ -41,8 +41,45 @@ public class BaseQuestion {
      */
 	public static int[][] rotateMatrix(int[][] mat, int n) {
 	    int[][] ans = new int[n][n];
-
-
-	    return null;
+	    int k=0;
+	    for(int i = 0; i < n; i++) {
+	        int mn = n-1;
+            for (int j = 0; j < n; j++) {
+                ans[i][j] = mat[mn--][k];
+            }
+            k++;
+        }
+	    return ans;
 	}
+
+    /**
+     * 请设计一个复杂度为O(n)的算法，计算一个未排序数组中排序后相邻元素的最大差值。
+     * 给定一个整数数组A和数组的大小n，请返回最大差值。保证数组元素个数大于等于2小于等于500。
+     * 测试样例：
+     * [9,3,1,10],4
+     * 返回：6
+     */
+    public int findMaxDivision(int[] A, int n) {
+        int max = A[0] ,min = A[0];
+        for(int i = 0;i < A.length;i++){
+            if(A[i] > max) max = A[i];
+            if(A[i] < min) min = A[i];
+        }
+        int[] ans =new int[max - min + 1];
+        for(int i = 0;i < A.length;i++){
+            ans[A[i] - min]++;
+        }
+        int count = 0;
+        int maxvalue = count;
+        for(int i = 0;i < ans.length;i++){
+            if(ans[i] == 0) count++;
+            else{
+                if(maxvalue < count){
+                    maxvalue = count;
+                }
+                count = 0;
+            }
+        }
+        return maxvalue + 1;
+    }
 }
