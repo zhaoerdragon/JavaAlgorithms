@@ -1,2 +1,2 @@
 # JavaAlgorithms
-It is for my wordks.
+It is for my works.
