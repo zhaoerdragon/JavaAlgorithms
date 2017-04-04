@@ -1,4 +1,4 @@
-package com.willscorpio.algorithm.base;
+package base;
 
 public class BinarySearch {
     /**

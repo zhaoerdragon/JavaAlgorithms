@@ -1,4 +1,4 @@
-package com.willscorpio.algorithm.base;
+package base;
 
 /**
  * 这个类来找出一串数字中的最大值

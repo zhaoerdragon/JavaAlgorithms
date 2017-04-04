@@ -1,4 +1,4 @@
-package com.willscorpio.algorithm.datastructute;
+package datastructute;
 
 /**
  * 这个类是创建基本的整型数据类型

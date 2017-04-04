@@ -1,4 +1,4 @@
-package com.willscorpio.algorithm.base;
+package base;
 
 /**
  * 排序算法类库
