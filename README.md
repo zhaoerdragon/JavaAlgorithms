@@ -1,2 +1,2 @@
 # JavaAlgorithms
-It is for my works.
+It is my works.
