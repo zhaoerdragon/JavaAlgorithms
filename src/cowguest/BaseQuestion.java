@@ -59,7 +59,7 @@ public class BaseQuestion {
      * [9,3,1,10],4
      * 返回：6
      */
-    public int findMaxDivision(int[] A, int n) {
+    public static int findMaxDivision(int[] A, int n) {
         int max = A[0] ,min = A[0];
         for(int i = 0;i < A.length;i++){
             if(A[i] > max) max = A[i];
@@ -81,5 +81,94 @@ public class BaseQuestion {
             }
         }
         return maxvalue + 1;
+    }
+
+    /**
+     * 对于两个字符串A，B。请设计一个高效算法，找到B在A中第一次出现的起始位置。若B未在A中出现，则返回-1。
+     * 给定两个字符串A和B，及它们的长度lena和lenb，请返回题目所求的答案。
+     * 测试样例：
+     * "acbc",4,"bc",2
+     * 返回：2
+     */
+    public static int findAppearance(String A, int lena, String B, int lenb) {
+        int tag = 0;
+        int k=0;
+        for(int i=0;i<lena;i++){
+            if(A.charAt(i)==B.charAt(k))  k++;
+            else k=0;
+            if(k == lenb)
+            {
+                tag = i - lenb + 1;
+                break;
+            }
+        }
+
+        if(k != lenb){
+            return -1;
+        }else return tag;
+    }
+
+    /**
+     * 请实现一个程序，输入父母血型，判断孩子可能的血型。
+     * 给定两个字符串father和mother，代表父母的血型,请返回一个字符串数组，代表孩子的可能血型(按照字典序排列)。
+     * 测试样例：
+     * ”A”,”A”
+     * 返回：[”A”,“O”]
+     */
+    public static String[] chkBlood(String father, String mother) {
+        String[] qus = new String[]{father, mother};
+        String[] string = null;
+        if(father.equals("O")&&mother.equals("O")){
+            string = new String[]{"O"};
+        }else if(father.equals("A")&&mother.equals("A")||father.equals("A")&&mother.equals("O")||father.equals("O")&&mother.equals("A")){
+            string = new String[]{"A", "O"};
+        }else if(father.equals("AB")&&mother.equals("AB")||father.equals("A")&&mother.equals("AB")||father.equals("AB")&&mother.equals("A")||father.equals("B")&&mother.equals("AB")||father.equals("AB")&&mother.equals("B")){
+            string = new String[]{"A", "AB", "B"};
+        }else if(father.equals("A")&&mother.equals("B")||father.equals("B")&&mother.equals("A")){
+            string = new String[]{"A", "AB", "B", "O"};
+        }else if(father.equals("B")&&mother.equals("B")||father.equals("B")&&mother.equals("O")||father.equals("O")&&mother.equals("B")){
+            string = new String[]{"B", "O"};
+        }else string = new String[]{"A", "B"};
+
+        return string;
+    }
+
+    /**
+     * 请你实现一个简单的字符串替换函数。原串中需要替换的占位符为"%s",请按照参数列表的顺序一一替换占位符。若参数列表的字符数     * 大于占位符个数。则将剩下的参数字符添加到字符串的结尾。
+     * 给定一个字符串A，同时给定它的长度n及参数字符数组arg，请返回替换后的字符串。保证参数个数大于等于占位符个数。保证原串由     * 大小写英文字母组成，同时长度小于等于500。
+     * 测试样例：
+     * "A%sC%sE",7,['B','D','F']
+     *  返回："ABCDEF"
+     */
+    public static String formatString(String A, int n, char[] arg, int m){
+        String ans = "";
+        int k = 0;
+        for(int i = 0;i<A.length();i++){
+            if(i == A.length()- 1){
+                ans = ans + A.charAt(i);
+                break;
+            }
+            if((""+A.charAt(i)+A.charAt(i+1)).equals("%s")){
+                ans = ans + arg[k++];
+                i = i + 1;
+            }else{
+                ans = ans + A.charAt(i);
+            }
+        }
+        if(k < m){
+            for(int i = k;i < m;i++) ans = ans + arg[i];
+        }
+
+        return ans;
+    }
+
+    /**
+     * 在4x4的棋盘上摆满了黑白棋子，黑白两色的位置和数目随机其中左上角坐标为(1,1),右下角坐标为(4,4),现在依次有一些翻转操作，  * 要对一些给定支点坐标为中心的上下左右四个棋子的颜色进行翻转，请计算出翻转后的棋盘颜色。
+     * 给定两个数组A和f,分别为初始棋盘和翻转位置。其中翻转位置共有3个。请返回翻转后的棋盘。
+     */
+    public static int[][] flipChess(int[][] A, int[][] f) {
+        int[][] ans = null;
+
+        return ans;
     }
 }
