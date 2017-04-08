@@ -167,8 +167,49 @@ public class BaseQuestion {
      * 给定两个数组A和f,分别为初始棋盘和翻转位置。其中翻转位置共有3个。请返回翻转后的棋盘。
      */
     public static int[][] flipChess(int[][] A, int[][] f) {
-        int[][] ans = null;
+        for(int i = 0;i<f.length;i++){
+            int x = f[i][0] - 1;
+            int y = f[i][1] - 1;
+            if(x-1>=0){
+                if(A[x-1][y] == 1){
+                    A[x-1][y] = 0;
+                }else A[x-1][y] = 1;
+            }
 
+            if(y-1>=0){
+                if(A[x][y-1] == 1){
+                    A[x][y-1] = 0;
+                }else A[x][y-1] = 1;
+            }
+
+            if(y+1<=3){
+                if(A[x][y+1] == 1){
+                    A[x][y+1] = 0;
+                }else A[x][y+1] = 1;
+            }
+
+            if(x+1<=3){
+                if(A[x+1][y] == 1){
+                    A[x+1][y] = 0;
+                }else A[x+1][y] = 1;
+            }
+        }
+        return A;
+    }
+
+    /**
+     * 有一个方阵，其中每个单元(像素)非黑即白(非0即1)，请设计一个高效算法，找到四条边颜色相同的最大子方阵。
+     * 给定一个01方阵mat，同时给定方阵的边长n，请返回最大子方阵的边长。保证方阵边长小于等于100。
+     */
+    public static int maxSubMatrix(int[][] mat, int n) {
+        int ans = 0;
+        int matrix = (n+1)/2;
+
+        for(int i = 0;i<matrix;i++){
+            for(int j = i;j<n-i;j++){
+                int key = mat[i][j];
+            }
+        }
         return ans;
     }
 }

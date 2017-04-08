@@ -38,4 +38,30 @@ public class SortingAlgorithm {
 	
 		return arrayint;
 	}
+
+	/**
+	 * 桶排序
+	 */
+	public static void tunSort(){
+		int[] a = new int[]{102,123,123,143,187,199,167,155,123};
+		int min = a[0], max = a[0];
+		for(int i = 0;i<a.length;i++){
+			if(a[i]>max) max = a[i];
+			if(a[i]<min) min = a[i];
+		}
+
+		int length = max - min + 1;
+		int[] sort = new int[length];
+		for(int i = 0;i<a.length;i++){
+			sort[a[i] - min]++;
+		}
+		for(int i = 0;i<sort.length;i++){
+			if(sort[i] == 0) continue;
+			else {
+				for(int j = 0;j<sort[i];j++){
+					System.out.print(" "+ (i+min) +" ");
+				}
+			}
+		}
+	}
 }
