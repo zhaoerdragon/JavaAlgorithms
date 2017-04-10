@@ -1,3 +1,4 @@
+import base.OrdinaryAlgorithm;
 import base.SortingAlgorithm;
 
 import java.util.Scanner;
@@ -11,8 +12,8 @@ public class MainFunction {
 
     public static void main(String[] args){
 
-        SortingAlgorithm.tunSort();
-
+        int answer = OrdinaryAlgorithm.fibonacciSoft(44);
+        System.out.println("x 的值是 " + answer);
     }
 
 }

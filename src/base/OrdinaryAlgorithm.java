@@ -34,5 +34,15 @@ public class OrdinaryAlgorithm {
     	if(N%2==0) return exponentiation(X*X, N/2);
     	else return euclidAlgorithm(X*X, N/2)*X;
     }
+
+	/**
+	 * 斐波那契数列求值
+	 * @param x 第一项
+	 */
+	public static int fibonacciSoft(int x){
+    	if(x==1||x==2) return 1;
+    	if(x==3) return 2;
+    	else return (fibonacciSoft(x-1)+fibonacciSoft(x-2));
+	}
     
 }
