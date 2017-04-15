@@ -1,4 +1,4 @@
-package base;
+package algorithm;
 
 public class BinarySearch {
     /**

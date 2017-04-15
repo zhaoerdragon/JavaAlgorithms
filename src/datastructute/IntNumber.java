@@ -1,11 +1,10 @@
 package datastructute;
 
 /**
- * 这个类是创建基本的整型数据类型
- * @author Administrator
- *
+ * 随机生成一些整形数字数组
  */
 public class IntNumber {
+
 	/**
 	 * 创建一个自定义长度1到50的整型数组
 	 * @param quantity 数组的长 度
@@ -19,6 +18,7 @@ public class IntNumber {
 		}
 		return arrayint;
 	}
+
 	/**
 	 * 创建一个从-50到50的长度自定义的整型数组
 	 * @param quantity 数组的长度

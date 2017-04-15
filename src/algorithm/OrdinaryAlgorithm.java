@@ -1,6 +1,7 @@
-package base;
+package algorithm;
 
 public class OrdinaryAlgorithm {
+
 	/**
 	 * 求出三个数中的最大数
 	 */
@@ -27,7 +28,11 @@ public class OrdinaryAlgorithm {
 		}
 		return big;
 	}
-	
+
+	/**
+	 * 动态规划问题，跳台阶
+	 * @return
+	 */
     public static int exponentiation(int X,int N){
     	if(N==0) return 1;
     	if(N==1) return X;

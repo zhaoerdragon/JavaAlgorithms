@@ -1,4 +1,4 @@
-package base;
+package algorithm;
 
 /**
  * 排序算法类库
@@ -6,7 +6,7 @@ package base;
 public class SortingAlgorithm {
 	
 	/**
-	 * 冒泡算法
+	 * 冒泡排序
 	 */
 	public static int[] BubbleSort(int[] arrayint){
 		for(int i=0;i<arrayint.length;i++){

@@ -1,4 +1,4 @@
-package base;
+package algorithm;
 
 /**
  * 这个类来找出一串数字中的最大值
