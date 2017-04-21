@@ -12,7 +12,7 @@ public class DynamicAlgorithm {
      * 2，3
      * 返回：1
      */
-    public int getLCA(int a, int b) {
+    public static int getLCA(int a, int b) {
         while (a != b){
             if(a>b) a = a/2;
             else b = b/2;
@@ -24,9 +24,75 @@ public class DynamicAlgorithm {
      * 有一个XxY的网格，一个机器人只能走格点且只能向右或向下走，要从左上角走到右下角。请设计一个算法，计算机器人有多少种走法。
      * 给定两个正整数int x,int y，请返回机器人的走法数目。保证x＋y小于等于12。
      */
-    public int countWays(int x, int y) {
+    public static int countWays(int x, int y) {
+        if(x<=0 || y<=0) return 0;
+        if(x == 1 && y == 1) return 1;
+        return countWays(x-1,y)+countWays(x,y-1);
+    }
+
+    /**
+     * 在数组A[0..n-1]中，有所谓的魔术索引，满足条件A[i]=i。给定一个升序数组，元素值各不相同，编写一个方法，判断在数组A中是否存在魔术索引。
+     * 请思考一种复杂度优于o(n)的方法。给定一个int数组A和int n代表数组大小，请返回一个bool，代表是否存在魔术索引。
+     */
+    public static boolean findMagicIndex(int[] A, int n) {
+        for(int i=0; i<n; i++){
+            if(A[i] == i){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     *  You are climbing a stair case. It takes n steps to reach to the top.
+     *  Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+     */
+    public static int climbStairs(int n) {
+        if(n==1 || n==2)
+            return n;
+        int res = 2;
+        int pre = 1;
+        int tmp = 0;
+        for(int i=3; i<=n; i++){
+            tmp = res;
+            res = res + pre;
+            pre = tmp;
+        }
+        return res;
+    }
+
+    /**
+     * 在数组A[0..n-1]中，有所谓的魔术索引，满足条件A[i]=i。给定一个不下降序列，元素值可能相同，编写一个方法，
+     * 判断在数组A中是否存在魔术索引。请思考一种复杂度优于o(n)的方法。给定一个int数组A和int n代表数组大小，
+     * 请返回一个bool，代表是否存在魔术索引。
+     */
+    public static boolean findMagicIndex2(int[] A, int n) {
+        for(int i=0; i<n; i++){
+            if(A[i] == i) return true;
+        }
+        return false;
+    }
+
+    /**
+     *  A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+     * The robot can only move either down or right at any point in time. The robot is trying to reach the
+     * bottom-right corner of the grid (marked 'Finish' in the diagram below).
+     * How many possible unique paths are there?
+     */
+    public static int uniquePaths(int m, int n) {
+        if(m<=0 || n<=0) return 0;
+        if(m==1 && n==1) return 1;
+        return uniquePaths(m-1,n) + uniquePaths(m,n-1);
+    }
+
+    /**
+     * 叠罗汉是一个著名的游戏，游戏中一个人要站在另一个人的肩膀上。同时我们应该让下面的人比上面的人更高一点。已知参加游戏的每个人的身高，
+     * 请编写代码计算通过选择参与游戏的人，我们多能叠多少个人。注意这里的人都是先后到的，
+     * 意味着参加游戏的人的先后顺序与原序列中的顺序应该一致。给定一个int数组men，代表依次来的每个人的身高。
+     * 同时给定总人数n，请返回最多能叠的人数。保证n小于等于500。
+     */
+    public int getHeight(int[] men, int n) {
 
         return 0;
     }
-
 }
