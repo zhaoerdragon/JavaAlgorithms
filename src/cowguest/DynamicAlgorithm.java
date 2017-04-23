@@ -90,9 +90,22 @@ public class DynamicAlgorithm {
      * 请编写代码计算通过选择参与游戏的人，我们多能叠多少个人。注意这里的人都是先后到的，
      * 意味着参加游戏的人的先后顺序与原序列中的顺序应该一致。给定一个int数组men，代表依次来的每个人的身高。
      * 同时给定总人数n，请返回最多能叠的人数。保证n小于等于500。
+     * Todo 这题我没理解，有时间看一下
      */
     public int getHeight(int[] men, int n) {
-
-        return 0;
+        int[] db = new int[n];
+        for(int i=0; i<n; i++){
+            db[i] = 1;
+            for(int j = 0; j < i; j++){
+                if(men[i] > men[j]){
+                    db[j] = Math.max(db[i], db[j] + 1);
+                }
+            }
+        }
+        int max = db[0];
+        for(int i = 1; i<n; i++){
+            if(db[i] > max) max = db[i];
+        }
+        return max;
     }
 }
