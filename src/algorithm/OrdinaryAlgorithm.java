@@ -1,5 +1,8 @@
 package algorithm;
 
+/**
+ * 平常的算法
+ */
 public class OrdinaryAlgorithm {
 
 	/**

@@ -2,9 +2,6 @@ package datastructute;
 
 import java.util.*;
 
-/**
- * Created by zhaohacker on 17-4-23.
- */
 public class Point {
 
     private int x;

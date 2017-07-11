@@ -1,7 +1,7 @@
 package designs;
 
 /**
- * 单例模式
+ * 线程安全的单例模式
  */
 public class Singleton {
 

@@ -1,9 +1,10 @@
 package algorithm;
 
 /**
- * 这个类来找出一串数字中的最大值
+ * 一串数字中的最大值
  */
 public class MaxValue {
+
 	/**
 	 * 使用穷举法来找出找出一段的最大和，复杂度为Θ(n^3)。
 	 * @param arrayint int类型数组
@@ -24,8 +25,9 @@ public class MaxValue {
 		}
 		return MaxSum;
 	}
+
 	/**
-	 * 这个方法也是求出一串整型数字的其中的一段最大和，这个比第一个好，复杂度是Θ(n^2)
+	 * 求出一串整型数字的其中的一段最大和，这个比第一个好，复杂度是Θ(n^2)
 	 * @param arrayint int类型数组
 	 * @return 最大值
 	 */

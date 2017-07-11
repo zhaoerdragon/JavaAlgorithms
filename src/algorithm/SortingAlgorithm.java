@@ -4,18 +4,18 @@ package algorithm;
  * 排序算法类库
  */
 public class SortingAlgorithm {
-	
+
 	/**
-	 * 冒泡排序
+	 * 升序的冒泡排序
 	 */
-	public static int[] BubbleSort(int[] arrayint){
-		for(int i=0;i<arrayint.length;i++){
-			for(int j=i+1;j<arrayint.length;j++){
-				int sample=0;
-				if(arrayint[j]>arrayint[i]){
-					sample=arrayint[j];
-					arrayint[j]=arrayint[i];
-					arrayint[i]=sample;
+	public static int[] bubbleSort(int[] arrayint){
+		for (int i = 0; i < arrayint.length; i++) {
+			for (int j = i + 1; j < arrayint.length; j++) {
+				int sample = 0;
+				if (arrayint[j] > arrayint[i]) {
+					sample = arrayint[j];
+					arrayint[j] = arrayint[i];
+					arrayint[i] = sample;
 				}
 			}
 		}
@@ -23,24 +23,24 @@ public class SortingAlgorithm {
 	}
 
 	/**
-	 * 选择排序
+	 * 升序的插入排序
 	 */
-	public static int[] SelectSort(int[] arrayint){
-		for(int i=1;i<arrayint.length;i++){
-			int key=arrayint[i];
-			int j=i-1;
-			while(j>=0&&arrayint[j]>key){
-				arrayint[i+1]=arrayint[i];
+	public static int[] insertionSort(int[] arrayint) {
+		for (int i = 1; i < arrayint.length; i++) {
+			int key = arrayint[i];
+			int j = i - 1;
+			while (j >= 0 && arrayint[j] > key) {
+				arrayint[j + 1] = arrayint[j];
 				j--;
 			}
-			arrayint[j+1]=key;
+			arrayint[j + 1] = key;
 		}
-	
+
 		return arrayint;
 	}
 
 	/**
-	 * 桶排序
+	 * 升序的桶排序
 	 */
 	public static void tunSort(){
 		int[] a = new int[]{102,123,123,143,187,199,167,155,123};
@@ -63,5 +63,15 @@ public class SortingAlgorithm {
 				}
 			}
 		}
+	}
+
+	/**
+	 * 升序的归并排序
+	 * @param arrayInt
+	 * @return
+	 */
+	public static int[] mergeSoft(int[] arrayInt) {
+
+		return null;
 	}
 }
