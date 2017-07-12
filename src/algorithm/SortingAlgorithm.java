@@ -1,5 +1,7 @@
 package algorithm;
 
+import utils.MyOut;
+
 /**
  * 排序算法类库
  */
@@ -12,7 +14,7 @@ public class SortingAlgorithm {
 		for (int i = 0; i < arrayint.length; i++) {
 			for (int j = i + 1; j < arrayint.length; j++) {
 				int sample = 0;
-				if (arrayint[j] > arrayint[i]) {
+				if (arrayint[j] < arrayint[i]) {
 					sample = arrayint[j];
 					arrayint[j] = arrayint[i];
 					arrayint[i] = sample;
@@ -23,20 +25,20 @@ public class SortingAlgorithm {
 	}
 
 	/**
-	 * 升序的插入排序
+	 * 升序的插入排序，
 	 */
-	public static int[] insertionSort(int[] arrayint) {
-		for (int i = 1; i < arrayint.length; i++) {
-			int key = arrayint[i];
-			int j = i - 1;
-			while (j >= 0 && arrayint[j] > key) {
-				arrayint[j + 1] = arrayint[j];
-				j--;
+	public static int[] insertionSort(int[] arrayInt) {
+		for (int j = 1; j < arrayInt.length; j++) {
+			int key = arrayInt[j];
+			int i = j - 1;
+			while (i >= 0 && arrayInt[i] > key) {
+				arrayInt[i + 1] = arrayInt[i];
+				i--;
 			}
-			arrayint[j + 1] = key;
+			arrayInt[i + 1] = key;
 		}
 
-		return arrayint;
+		return arrayInt;
 	}
 
 	/**
@@ -70,8 +72,57 @@ public class SortingAlgorithm {
 	 * @param arrayInt
 	 * @return
 	 */
-	public static int[] mergeSoft(int[] arrayInt) {
-
-		return null;
+	public static int[] mergeSoft(int[] arrayInt, int low, int high) {
+		if (low < high) {
+			int mid = (low + high) / 2;
+			mergeSoft(arrayInt, low, mid);
+			mergeSoft(arrayInt, mid + 1, high);
+			merge(arrayInt, low, mid, high);
+		}
+		return arrayInt;
 	}
+
+
+	/**
+	 * 归并排序的一部分，将两个排列好的数组合并成一个数组
+	 * @param arrayInt
+	 * @param low
+	 * @param mid
+	 * @param high
+	 * @return
+	 */
+	private static void merge(int[] arrayInt, int low, int mid, int high) {
+
+		int a = mid - low + 1;
+		int b = high - mid;
+		int[] xx = new int[a + 1];
+		int[] yy = new int[b + 1];
+
+		for (int i = 0; i < xx.length - 1; i++) {
+			xx[i] = arrayInt[low + i];
+		}
+
+		for (int i = 0; i < yy.length - 1; i++) {
+			yy[i] = arrayInt[mid + 1 + i];
+		}
+		/**
+		 * 设置哨兵
+		 */
+		xx[a] = Integer.MAX_VALUE;
+		yy[b] = Integer.MAX_VALUE;
+
+		int n = 0;
+		int m = 0;
+
+		for (int i = low; i <= high; i++) {
+			if (xx[n] < yy[m]) {
+				arrayInt[i] = xx[n];
+				n = n + 1;
+			} else {
+				arrayInt[i] = yy[m];
+				m = m + 1;
+			}
+		}
+	}
+
 }

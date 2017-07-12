@@ -18,7 +18,7 @@ public class Point {
     /**
      * 在二维平面上，有一些点，请找出经过点数最多的那条线。
      * 给定一个点集vector p和点集的大小n,没有两个点的横坐标相等的情况,请返回一个vector，代表经过点数最多的那条直线的斜率和截距。
-     * todo 不想做了，有点累，啥时候把这写完
+     * todo 不想做了，有点累，啥时候把这写完,这个题还没有做出来
      */
     public double[] getLine(Point[] p, int n) {
         double[] answer = new double[]{0};

@@ -1,6 +1,6 @@
-import cowguest.DynamicAlgorithm;
-
-import java.io.*;
+import algorithm.SortingAlgorithm;
+import utils.CreateArray;
+import utils.MyOut;
 
 /**
  * 这是整个包的主函数，用来验证代码算法是否正确
@@ -10,7 +10,10 @@ import java.io.*;
 public class MainFunction {
 
     public static void main(String[] args) {
-     int x = DynamicAlgorithm.countWays(2,2);
-     System.out.println("x 的值是:"+x);
+        int[] arrayInt = CreateArray.CreateIntArray(30);
+
+        SortingAlgorithm.mergeSoft(arrayInt, 0, arrayInt.length - 1);
+
+        MyOut.println(arrayInt);
     }
 }

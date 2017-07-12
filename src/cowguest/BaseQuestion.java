@@ -3,7 +3,7 @@ package cowguest;
 import java.util.Stack;
 
 /**
- * 基本问题的答案
+ * 有些是基本问题，有些是牛客网上的问题
  */
 public class BaseQuestion {
 

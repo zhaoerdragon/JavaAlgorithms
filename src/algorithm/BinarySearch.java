@@ -1,6 +1,7 @@
 package algorithm;
 
 public class BinarySearch {
+
     /**
      * 对分查找，但是这个数组必须是已经排好序的
      * @param arrayint 已经排好序的数组
