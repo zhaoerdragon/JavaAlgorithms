@@ -24,4 +24,16 @@ public class MyOut {
         }
     }
 
+    /**
+     * 遍历二维数组，并打印出结果
+     * @param arrayInt
+     */
+    public static void println(int[][] arrayInt) {
+        for(int i=0;i<arrayInt.length;i++) {
+            for(int j=0;j<arrayInt[0].length;j++) {
+                System.out.print("   " + arrayInt[i][j] + "   ");
+            }
+            MyOut.println("");
+        }
+    }
 }
