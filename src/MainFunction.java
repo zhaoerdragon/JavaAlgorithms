@@ -1,8 +1,13 @@
+import algorithm.SortingAlgorithm;
+import datastructute.MaxHeapify;
+import utils.CreateArray;
 import utils.MyOut;
 
 public class MainFunction{
     public static void main(String[] args) {
-        int[][] A = new int[][]{{1, 2, 3}, {4, 5, 6}};
-        MyOut.println(A);
+        int[] arrayInt = CreateArray.createIntArray(10);
+        MaxHeapify.heapSort(arrayInt);
+
+        MyOut.println(arrayInt);
     }
 }

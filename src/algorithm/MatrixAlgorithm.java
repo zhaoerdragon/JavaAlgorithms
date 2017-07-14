@@ -29,5 +29,15 @@ public class MatrixAlgorithm {
         return out;
     }
 
+    /**
+     * Strassen算法，时间复杂度是O(n^2.81).
+     * @param xx
+     * @param yy
+     * @return
+     */
+    // TODO: 7/14/17 这个算法我现在理解不了，所以先把坑留在这，以后再做 
+    public static int[][] strassenMatrix(int[][] xx, int[][] yy) {
 
+        return null;
+    }
 }

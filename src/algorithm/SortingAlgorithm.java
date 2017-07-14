@@ -72,11 +72,11 @@ public class SortingAlgorithm {
 	 * @param arrayInt
 	 * @return
 	 */
-	public static int[] mergeSoft(int[] arrayInt, int low, int high) {
+	public static int[] mergeSort(int[] arrayInt, int low, int high) {
 		if (low < high) {
 			int mid = (low + high) / 2;
-			mergeSoft(arrayInt, low, mid);
-			mergeSoft(arrayInt, mid + 1, high);
+			mergeSort(arrayInt, low, mid);
+			mergeSort(arrayInt, mid + 1, high);
 			merge(arrayInt, low, mid, high);
 		}
 		return arrayInt;
@@ -124,5 +124,6 @@ public class SortingAlgorithm {
 			}
 		}
 	}
+
 
 }
