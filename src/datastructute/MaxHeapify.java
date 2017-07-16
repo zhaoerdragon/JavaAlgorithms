@@ -2,54 +2,55 @@ package datastructute;
 
 /**
  * 二叉堆中的最大堆
+ * 堆排序
+ * 堆排序我理解的还可以，但是时间复杂度我不会计算
  */
 public class MaxHeapify {
 
     /**
-     * 维护堆的性质
+     * 堆排序
      * @param arrayInt
+     */
+    public static void heapSoft(int[] arrayInt) {
+        int heapSize = arrayInt.length - 1;
+        for (int i = arrayInt.length / 2; i >= 0; i--) {
+            maxHeap(arrayInt, heapSize, i);
+        }
+        for (int i = arrayInt.length - 1; i > 0; i--) {
+            int temp = arrayInt[i];
+            arrayInt[i] = arrayInt[0];
+            arrayInt[0] = temp;
+            heapSize = heapSize - 1;
+            maxHeap(arrayInt, heapSize, 0);
+        }
+    }
+
+    /**
+     * 维护堆的性质，假定左右子数都是二叉堆的情况下，整理结点
+     * @param arrayInt
+     * @param heapSize
      * @param sign
      */
-    public static void maxHeapify(int[] arrayInt, int sign) {
-        int left = 2 * sign;
-        int right = 2 * sign + 1;
+    private static void maxHeap(int[] arrayInt, int heapSize, int sign) {
+        int left = sign * 2;
+        int right = sign * 2 + 1;
         int largest;
-        if ((left < arrayInt.length) && (arrayInt[left] > arrayInt[sign])) {
+
+        if (left <= heapSize && arrayInt[left] > arrayInt[sign]) {
             largest = left;
-        } else {
+        }else {
             largest = sign;
         }
-        if ((right < arrayInt.length) && (arrayInt[right] > arrayInt[sign])) {
+        if (right <= heapSize && arrayInt[right] > arrayInt[largest]) {
             largest = right;
         }
+
         if (largest != sign) {
             int temp = arrayInt[largest];
             arrayInt[largest] = arrayInt[sign];
             arrayInt[sign] = temp;
-            maxHeapify(arrayInt, largest);
+            maxHeap(arrayInt, heapSize, largest);
         }
     }
 
-    /**
-     * 建堆
-     * @param arrayInt
-     */
-    public static void buildMaxHeap(int[] arrayInt) {
-        for (int i = arrayInt.length / 2; i >= 0; i--) {
-            maxHeapify(arrayInt, i);
-        }
-    }
-
-    /**
-     * 升序的堆排序(最大堆),最小堆用来实现优先队列。
-     * @param arrayInt
-     */
-    public static void heapSort(int[] arrayInt) {
-        for (int i = arrayInt.length - 1; i > 0; i--) {
-            int temp = arrayInt[i];
-            arrayInt[i] = arrayInt[1];
-            arrayInt[1] = temp;
-            maxHeapify(arrayInt, 1);
-        }
-    }
 }
