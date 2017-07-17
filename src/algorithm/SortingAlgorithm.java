@@ -125,5 +125,30 @@ public class SortingAlgorithm {
 		}
 	}
 
-
+	/**
+	 * 快速排序算法
+	 * @param arrayInt
+	 * @param start
+	 * @param end
+	 */
+	public static void quickSoft(int[] arrayInt, int start, int end) {
+		if (start < end) {
+			int x = arrayInt[end];
+			int i = start - 1;
+			for (int j = start; j < end; j++) {
+				if (arrayInt[j] < x) {
+					i = i + 1;
+					int temp = arrayInt[i];
+					arrayInt[i] = arrayInt[j];
+					arrayInt[j] = temp;
+				}
+			}
+			int temp = arrayInt[i + 1];
+			arrayInt[i + 1] = arrayInt[end];
+			arrayInt[end] = temp;
+			int middle = i + 1;
+			quickSoft(arrayInt, start, middle - 1);
+			quickSoft(arrayInt, middle + 1, end);
+		}
+	}
 }

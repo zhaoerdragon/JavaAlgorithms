@@ -6,9 +6,9 @@ import utils.MyOut;
 
 public class MainFunction{
     public static void main(String[] args) {
-        int[] arrayInt = CreateArray.createIntArray(10);
+        int[] arrayInt = CreateArray.createIntArray(20);
 
-        MaxHeapify.heapSoft(arrayInt);
+        SortingAlgorithm.quickSoft(arrayInt, 0, arrayInt.length - 1);
 
         MyOut.println(arrayInt);
     }
