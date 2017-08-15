@@ -21,7 +21,7 @@ public class ListQuestion {
      * 请编写一个函数，检查链表是否为回文。
      * 给定一个链表ListNode* pHead，请返回一个bool，代表链表是否为回文。
      */
-    public boolean isPalindrome(ListNode pHead) {
+    public static boolean isPalindrome(ListNode pHead) {
         int length = 1;
         ListNode backNode = pHead;
         while (backNode.next != null){

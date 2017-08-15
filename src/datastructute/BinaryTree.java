@@ -3,7 +3,7 @@ package datastructute;
 /**
  * 数据结构，二叉搜索树
  */
-public class BinarySearchTree {
+public class BinaryTree {
 
     /**
      * 前序遍历，所谓“前序”，指的是先从根节点开始遍历，处理的优先级高于它的两棵子树。
@@ -153,12 +153,58 @@ public class BinarySearchTree {
 
     /**
      * 已知中序遍历和后序遍历构造二叉树
-     * @param inorder
-     * @param postorder
+     * @param inorder 中序遍历
+     * @param postorder 后序遍历
      * @return
      */
-    public TreeNode buildTree(int[] inorder, int[] postorder) {
+    public static TreeNode buildTreeMPost(int[] inorder, int[] postorder) {
+
 
         return null;
+    }
+
+    /**
+     * 根据二叉树的中序遍历和前序遍历构造二叉树
+     * @param inorder 中序遍历
+     * @param preorder  前序遍历
+     * @return
+     */
+    public static TreeNode buildTreeMPre(int[] inorder, int[] preorder) {
+
+        return reBuildTree(inorder, 0, inorder.length - 1, preorder, 0, preorder.length - 1);
+    }
+
+    private static TreeNode reBuildTree(int[] inorder, int startIn, int endIn, int[] preOrder, int startPre, int endPre) {
+        if (startIn > endIn || startPre > endPre) {
+            return null;
+        }
+
+        TreeNode treeNode = new TreeNode(preOrder[startPre]);
+
+        for (int i = 0; i < inorder.length; i++) {
+            if (preOrder[startPre] == inorder[i]) {
+                treeNode.leftNdoe = reBuildTree(inorder, startIn, i - 1, preOrder, startPre + 1, i+startPre-startIn);
+                treeNode.rightNode = reBuildTree(inorder, i + 1, endIn, preOrder, i - startIn + startPre + 1, endPre);
+                break;
+            }
+        }
+
+        return treeNode;
+    }
+
+    /**
+     * 操作给定的二叉树，将其变换为源二叉树的镜像。
+     *
+     * @param root
+     */
+    public static void Mirror(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        TreeNode temp = root.leftNdoe;
+        root.leftNdoe = root.rightNode;
+        root.rightNode = temp;
+        Mirror(root.leftNdoe);
+        Mirror(root.rightNode);
     }
 }
