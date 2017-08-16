@@ -3,7 +3,6 @@ package datastructute;
 /**
  * 二叉堆中的最大堆
  * 堆排序
- * 堆排序我理解的还可以，但是时间复杂度我不会计算
  */
 public class MaxHeapify {
 

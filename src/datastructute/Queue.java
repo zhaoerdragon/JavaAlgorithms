@@ -2,6 +2,9 @@ package datastructute;
 
 import java.util.Stack;
 
+/**
+ * 队列类算法
+ */
 public class Queue {
 
     Stack<Integer> stack1 = new Stack<>();

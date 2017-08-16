@@ -2,6 +2,8 @@ package cowguest;
 
 import com.sun.org.apache.xml.internal.serializer.ElemDesc;
 
+import java.util.ArrayList;
+
 /**
  * 牛客网编程题
  */
@@ -183,14 +185,60 @@ public class BaseQuestion2 {
 
     /**
      * 给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。
-     *
      * @param base
      * @param exponent
      * @return
      */
-    // TODO: 17-8-15 这个还没有做出来
     public double Power(double base, int exponent) {
 
         return 0;
+    }
+
+    /**
+     * 输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+     * 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.
+     * @param matrix
+     * @return
+     */
+    // TODO: 17-8-16 这个题目有难度，我还没有做出来
+    public ArrayList<Integer> printMatrix(int [][] matrix) {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        int line = matrix.length;                       //行
+        int column = matrix[0].length;                  //列
+
+        for (int i = 0; i < line; i++) {
+            for (int j = 0; j < column; j++) {
+                arrayList.add(matrix[i][j]);
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组,求出这个数组中的逆序对的总数P。
+     * 并将P对1000000007取模的结果输出。 即输出P%1000000007
+     * @param array
+     * @return
+     */
+    public static int InversePairs(int [] array) {
+        int key = 0;
+        int temp = 0;
+        for (int i = array.length - 2; i >= 0; i--) {
+            if (array[i] > array[i + 1]) {
+                temp = temp + 1;
+                key = key + temp;
+            } else if (array[i] == array[i + 1]) {
+                key = key + temp;
+            }else {
+                for (int j = i; j < array.length; j++) {
+                    for (int k = j + 1; k < array.length; k++) {
+                        if (array[j] > array[k]) {
+                            key++;
+                        }
+                    }
+                }
+            }
+        }
+        return key%1000000007;
     }
 }

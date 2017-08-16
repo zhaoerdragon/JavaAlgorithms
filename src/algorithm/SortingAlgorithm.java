@@ -126,6 +126,36 @@ public class SortingAlgorithm {
 	}
 
 	/**
+	 * 讲两个有序数组合并成一个有序数组，是merge的不同实现方式
+	 * @param arrayInt
+	 * @param left
+	 * @param mid
+	 * @param right
+	 */
+	public static void merge2(int[] arrayInt, int left, int mid, int right) {
+		int[] temp = new int[right - left + 1];
+		int i = left;
+		int j = mid + 1;
+		int k = 0;
+		while (i <= mid && j <= right) {
+			if (arrayInt[i] <= arrayInt[j]) {
+				temp[k++] = arrayInt[i++];
+			}else {
+				temp[k++] = arrayInt[j++];
+			}
+		}
+		while (i <= mid) {
+			temp[k++] = arrayInt[i++];
+		}
+		while (j <= right) {
+			temp[k++] = arrayInt[j++];
+		}
+		for (int ij = 0; ij < temp.length; ij++) {
+			arrayInt[ij + left] = temp[ij];
+		}
+	}
+
+	/**
 	 * 快速排序算法
 	 * @param arrayInt
 	 * @param start

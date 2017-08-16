@@ -6,20 +6,6 @@ package datastructute;
 public class BinaryTree {
 
     /**
-     * 前序遍历，所谓“前序”，指的是先从根节点开始遍历，处理的优先级高于它的两棵子树。
-     */
-    public static void preorderPrint(TreeNode treeNode) {
-        System.out.println(treeNode.data);
-
-        if (treeNode.leftNdoe != null) {
-            preorderPrint(treeNode);
-        }
-        if (treeNode.rightNode != null) {
-            preorderPrint(treeNode.rightNode);
-        }
-    }
-
-    /**
      * 中序遍历，也就是将根节点放在左子树和右子树之间处理
      */
     public static void inorderPrint(TreeNode treeNode){
