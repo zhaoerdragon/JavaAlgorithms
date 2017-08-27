@@ -126,7 +126,7 @@ public class SortingAlgorithm {
 	}
 
 	/**
-	 * 讲两个有序数组合并成一个有序数组，是merge的不同实现方式
+	 * 归并排序的不同实现方式，讲两个有序数组合并成一个有序数组
 	 * @param arrayInt
 	 * @param left
 	 * @param mid

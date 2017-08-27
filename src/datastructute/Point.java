@@ -2,6 +2,9 @@ package datastructute;
 
 import java.util.*;
 
+/**
+ * 点类算法
+ */
 public class Point {
 
     private int x;

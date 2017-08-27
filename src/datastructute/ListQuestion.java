@@ -6,18 +6,6 @@ package datastructute;
 public class ListQuestion {
 
     /**
-     * 链表的基本结构
-     */
-    public class ListNode {
-        int val;
-        ListNode next = null;
-
-        ListNode(int val) {
-            this.val = val;
-        }
-    }
-
-    /**
      * 请编写一个函数，检查链表是否为回文。
      * 给定一个链表ListNode* pHead，请返回一个bool，代表链表是否为回文。
      */

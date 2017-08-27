@@ -125,7 +125,6 @@ public class MaxValue {
 				return crossSum;
 			}
 		}
-
 	}
 
 }

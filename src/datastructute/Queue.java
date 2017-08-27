@@ -26,4 +26,5 @@ public class Queue {
         }
         return stack2.pop();
     }
+
 }
