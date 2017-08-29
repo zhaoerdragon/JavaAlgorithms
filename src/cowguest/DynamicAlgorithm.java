@@ -91,20 +91,60 @@ public class DynamicAlgorithm {
      * 意味着参加游戏的人的先后顺序与原序列中的顺序应该一致。给定一个int数组men，代表依次来的每个人的身高。
      * 同时给定总人数n，请返回最多能叠的人数。保证n小于等于500。
      */
-    public int getHeight(int[] men, int n) {
-        int[] db = new int[n];
-        for(int i=0; i<n; i++){
-            db[i] = 1;
-            for(int j = 0; j < i; j++){
-                if(men[i] > men[j]){
-                    db[j] = Math.max(db[i], db[j] + 1);
+    public static int getHeight(int[] men, int n) {
+        int[] res = new int[n];
+        res[0] = 1;
+        int max = 1;
+        for (int i = 1; i < n; i++) {
+            res[i] = 1;
+            for (int j = i - 1; j >= 0; j--) {
+                if (men[i] > men[j] && res[j] + 1 > res[i]) {
+                    res[i] = res[j] + 1;
                 }
             }
-        }
-        int max = db[0];
-        for(int i = 1; i<n; i++){
-            if(db[i] > max) max = db[i];
+            max = Math.max(res[i], max);
         }
         return max;
     }
+
+    /**
+     * 有一个数组changes，changes中所有的值都为正数且不重复。每个值代表一种面值的货币，每种面值的货币可以使用任意
+     * 张，对于一个给定值x，请设计一个高效算法，计算组成这个值的方案数。
+     * 给定一个int数组changes，代表所以零钱，同时给定它的大小n，另外给定一个正整数x，请返回组成x的方案数，保证n小于等于100且x小于等于
+     * 10000。
+     * @param changes
+     * @param n
+     * @param x
+     * @return
+     */
+    public static int countWays(int[] changes, int n, int x) {
+        int[] temp = new int[x + 1];
+        temp[0] = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j + changes[i] <= x; j++) {
+                temp[j + changes[i]] = temp[j + changes[i]] + temp[j];
+            }
+        }
+        return temp[x];
+    }
+
+    /**
+     * 现定义数组单调和为所有元素i的f(i)值之和。这里的f(i)函数定义为元素i左边(不包括其自身)小于等于它的数字之和。请设计一个高效算法，计
+     * 算数组的单调和。给定一个数组A同时给定数组的大小n，请返回数组的单调和。保证数组大小小于等于500，同时保证单调和不会超过int范围。
+     * @param A
+     * @param n
+     * @return
+     */
+    public static int calcMonoSum(int[] A, int n) {
+        int count = 0;
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (A[j] <= A[i]) {
+                    count = count + A[j];
+                }
+            }
+        }
+        return count;
+    }
+
 }

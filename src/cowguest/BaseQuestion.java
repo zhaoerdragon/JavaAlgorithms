@@ -401,4 +401,62 @@ public class BaseQuestion {
         return temp;
     }
 
+    /**
+     * 现在有一个数组，请找出数组中每个元素的后面比它大的最小的元素，若不存在则为-1。
+     * 给定一个int数组A及数组的大小n，请返回每个元素所求的值组成的数组。保证A中元素为正整数，且n小于等于1000。
+     * @param A
+     * @param n
+     * @return
+     */
+    public static int[] findNext(int[] A, int n) {
+        for (int i = 0; i < n; i++) {
+            int min = Integer.MAX_VALUE;
+            for (int j = i + 1; j < n; j++) {
+                if (A[j] > A[i] && A[j] < min) {
+                    min = A[j];
+                }
+            }
+            if (min == Integer.MAX_VALUE) {
+                min = -1;
+            }
+            A[i] = min;
+        }
+        return A;
+    }
+
+    /**
+     * 自守数是指一个数的平方的尾数等于该数自身的自然数。例如：25^2 = 625，76^2 = 5776，9376^2 = 87909376。请求出n以内的自守数的个数
+     * @param n
+     * @return
+     */
+    public static int CalcAutomorphicNumbers(int n)
+    {
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            int key = i * i;
+            int exp = String.valueOf(i).length();
+            if (i == (key % (int) Math.pow(10, exp))) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    /**
+     * 在一个nxm矩阵形状的城市里爆发了洪水，洪水从(0,0)的格子流到这个城市，在这个矩阵中有的格子有一些建筑，洪水只能在没有建筑的格子流动
+     * 。请返回洪水流到(n - 1,m - 1)的最早时间(洪水只能从一个格子流到其相邻的格子且洪水单位时间能从一个格子流到相邻格子)。
+     * 给定一个矩阵map表示城市，其中map[i][j]表示坐标为(i,j)的格子，值为1代表该格子有建筑，0代表没有建筑。同时给定矩阵的大小n和m(n和m
+     * 均小于等于100)，请返回流到(n - 1,m - 1)的最早时间。保证洪水一定能流到终点。
+     * @param map
+     * @param n
+     * @param m
+     * @return
+     */
+    // TODO: 17-8-29 这个题难，先放一下
+    public int floodFill(int[][] map, int n, int m) {
+        int count = 0;
+
+        return count;
+    }
+
 }

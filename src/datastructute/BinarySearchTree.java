@@ -140,7 +140,7 @@ public class BinarySearchTree {
     }
 
     /**
-     * 在二叉树树中删除一个结点
+     * 在二叉搜索树中删除一个结点
      * @param rootTree
      * @param binarySearchTreeNode
      */

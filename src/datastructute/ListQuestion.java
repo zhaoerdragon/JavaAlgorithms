@@ -1,5 +1,7 @@
 package datastructute;
 
+import org.omg.PortableInterceptor.INACTIVE;
+
 /**
  * 链表类的算法
  */
@@ -35,6 +37,7 @@ public class ListQuestion {
 
     /**
      * 输入一个链表，输出该链表中倒数第k个结点。
+     *
      * @param head
      * @param k
      * @return
@@ -60,6 +63,7 @@ public class ListQuestion {
 
     /**
      * 输入一个链表，反转链表后，输出链表的所有元素。
+     *
      * @param head
      * @return
      */
@@ -95,6 +99,7 @@ public class ListQuestion {
 
     /**
      * 输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
+     *
      * @param list1
      * @param list2
      * @return
@@ -109,10 +114,82 @@ public class ListQuestion {
         if (list1.val <= list2.val) {
             list1.next = Merge(list1.next, list2);
             return list1;
-        }else {
+        } else {
             list2.next = Merge(list1, list2.next);
             return list2;
         }
     }
 
+    /**
+     * 有两个用链表表示的整数，每个结点包含一个数位。这些数位是反向存放的，也就是个位排在链表的首部。编写函数对这两个整数求和，
+     * 并用链表形式返回结果。
+     * 给定两个链表ListNode* A，ListNode* B，请返回A+B的结果(ListNode*)。
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    public ListNode plusAB(ListNode a, ListNode b) {
+        ListNode start = new ListNode(Integer.MAX_VALUE);
+        ListNode temp = start;
+        while (a != null || b != null) {
+            ListNode listNode = null;
+            if (a == null) {
+                listNode = new ListNode(b.val);
+                b = b.next;
+            } else if (b == null) {
+                listNode = new ListNode(a.val);
+                a = a.next;
+            } else {
+                int key = a.val + b.val;
+                if (key >= 10) {
+                    listNode = new ListNode(key % 10);
+                    if (a.next != null) {
+                        a.next.val = a.next.val + key / 10;
+                    } else if (b.next != null) {
+                        b.next.val = b.next.val + key / 10;
+                    } else {
+                        ListNode okList = new ListNode(key / 10);
+                        a.next = okList;
+                    }
+                } else {
+                    listNode = new ListNode(key);
+                }
+                a = a.next;
+                b = b.next;
+            }
+            temp.next = listNode;
+            temp = temp.next;
+        }
+        return start.next;
+    }
+
+    /**
+     * 编写代码，以给定值x为基准将链表分割成两部分，所有小于x的结点排在大于或等于x的结点之前
+     * 给定一个链表的头指针 ListNode* pHead，请返回重新排列后的链表的头指针。注意：分割以后保持原来的数据顺序不变。
+     * @param pHead
+     * @param x
+     * @return
+     */
+    public ListNode partition(ListNode pHead, int x) {
+        ListNode low = new ListNode(Integer.MIN_VALUE);
+        ListNode tempLow = low;
+        ListNode high = new ListNode(Integer.MAX_VALUE);
+        ListNode tempHigh = high;
+        while (pHead != null) {
+            if (pHead.val < x) {
+                ListNode listNode = new ListNode(pHead.val);
+                tempLow.next = listNode;
+                tempLow = tempLow.next;
+            } else {
+                ListNode listNode = new ListNode(pHead.val);
+                tempHigh.next = listNode;
+                tempHigh = tempHigh.next;
+            }
+            pHead = pHead.next;
+        }
+        high = high.next;
+        tempLow.next = high;
+        return low.next;
+    }
 }
