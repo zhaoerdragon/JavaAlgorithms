@@ -9,9 +9,13 @@ import utils.MyOut;
 
 public class MainFunction{
     public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            System.out.println("数字 " + i + "  中共有 " + Integer.bitCount(i) + " 个1");
+        int[] arrays = new int[]{1, 2, 3, 4, 5, 5, 5, 8};
+        int kinds = 1;
+        for (int i = 1; i < arrays.length; i++) {
+            if (arrays[i] - arrays[i - 1] > 0) {
+                kinds++;
+            }
         }
-
+        System.out.println("This kinds is " + kinds);
     }
 }
