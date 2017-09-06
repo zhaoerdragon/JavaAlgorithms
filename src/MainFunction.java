@@ -9,13 +9,8 @@ import utils.MyOut;
 
 public class MainFunction{
     public static void main(String[] args) {
-        int[] arrays = new int[]{1, 2, 3, 4, 5, 5, 5, 8};
-        int kinds = 1;
-        for (int i = 1; i < arrays.length; i++) {
-            if (arrays[i] - arrays[i - 1] > 0) {
-                kinds++;
-            }
-        }
-        System.out.println("This kinds is " + kinds);
+        int[] arrayInt = new int[]{1, 2, 2, 3, 3, 4, 4, 5, 5};
+        int count = LeetCodeQuestion.singleNumber(arrayInt);
+        System.out.println("得到的结果是:" + count);
     }
 }
