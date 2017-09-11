@@ -1,9 +1,13 @@
 package cowguest;
 
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.MatchGenerator;
 import com.sun.org.apache.xalan.internal.xsltc.util.IntegerArray;
 import org.omg.PortableInterceptor.INACTIVE;
+import sun.awt.SunHints;
 
 import javax.swing.*;
+import javax.swing.text.html.HTMLDocument;
+import java.net.Inet4Address;
 import java.util.*;
 
 /**
@@ -15,6 +19,7 @@ public class LeetCodeQuestion {
      * The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
      * Given two integers x and y, calculate the Hamming distance.
      * 461
+     *
      * @param x
      * @param y
      * @return
@@ -33,6 +38,7 @@ public class LeetCodeQuestion {
 
     /**
      * 461
+     *
      * @param x
      * @param y
      * @return
@@ -49,6 +55,7 @@ public class LeetCodeQuestion {
      * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
      * You may assume that each input would have exactly one solution, and you may not use the same element twice.
      * 1
+     *
      * @param nums
      * @param target
      * @return
@@ -66,6 +73,7 @@ public class LeetCodeQuestion {
 
     /**
      * 1
+     *
      * @param nums
      * @param target
      * @return
@@ -86,6 +94,7 @@ public class LeetCodeQuestion {
 
     /**
      * 1
+     *
      * @param nums
      * @param target
      * @return
@@ -109,6 +118,7 @@ public class LeetCodeQuestion {
      * are R (Right), L (Left), U (Up) and D (down). The output should be true or false representing whether the robot
      * makes a circle.
      * 657
+     *
      * @param moves
      * @return
      */
@@ -117,17 +127,19 @@ public class LeetCodeQuestion {
         int ud = 0;
         for (int i = 0; i < moves.length(); i++) {
             switch (moves.charAt(i)) {
-                case 'L':{
+                case 'L': {
                     lr++;
                     break;
                 }
-                case 'R':{
+                case 'R': {
                     lr--;
                     break;
-                }case 'U':{
+                }
+                case 'U': {
                     ud--;
                     break;
-                }case 'D':{
+                }
+                case 'D': {
                     ud++;
                     break;
                 }
@@ -145,6 +157,7 @@ public class LeetCodeQuestion {
      * You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node
      * values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree.
      * 617
+     *
      * @param t1
      * @param t2
      * @return
@@ -166,6 +179,7 @@ public class LeetCodeQuestion {
      * Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1),
      * (a2, b2), ..., (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible.
      * 561
+     *
      * @param nums
      * @return
      */
@@ -182,6 +196,7 @@ public class LeetCodeQuestion {
      * Given a positive integer, output its complement number. The complement strategy is to flip the bits of its
      * binary representation.
      * 476
+     *
      * @param num
      * @return
      */
@@ -240,7 +255,7 @@ public class LeetCodeQuestion {
                     sign = sign + 202;
                 }
             }
-            if (sign == 0 || sign == words[i].length()*202 || sign == -words[i].length()*203) {
+            if (sign == 0 || sign == words[i].length() * 202 || sign == -words[i].length() * 203) {
                 stringList.add(words[i]);
             }
         }
@@ -263,7 +278,7 @@ public class LeetCodeQuestion {
         String[] strings = s.split(" ");
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < strings.length; i++) {
-            stringBuilder.append(new StringBuffer(strings[i]).reverse().toString()+" ");
+            stringBuilder.append(new StringBuffer(strings[i]).reverse().toString() + " ");
         }
         return stringBuilder.toString().trim();
     }
@@ -271,6 +286,7 @@ public class LeetCodeQuestion {
     /**
      * Write a function that takes a string as input and returns the string reversed.
      * 344
+     *
      * @param s
      * @return
      */
@@ -283,6 +299,7 @@ public class LeetCodeQuestion {
      * candies. Each number means one candy of the corresponding kind. You need to distribute these candies equally in
      * number to brother and sister. Return the maximum number of kinds of candies the sister could gain.
      * 575
+     *
      * @param candies
      * @return
      */
@@ -290,7 +307,7 @@ public class LeetCodeQuestion {
         Arrays.sort(candies);
         int kinds = 1;
         for (int i = 1; i < candies.length; i++) {
-            if (candies[i] > candies[i - 1] ) {
+            if (candies[i] > candies[i - 1]) {
                 kinds++;
             }
         }
@@ -307,6 +324,7 @@ public class LeetCodeQuestion {
      * If the 'reshape' operation with given parameters is possible and legal, output the new reshaped matrix;
      * Otherwise, output the original matrix.
      * 566
+     *
      * @param nums
      * @param r
      * @param c
@@ -340,6 +358,7 @@ public class LeetCodeQuestion {
      * But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output
      * “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”.
      * 412
+     *
      * @param n
      * @return
      */
@@ -348,11 +367,11 @@ public class LeetCodeQuestion {
         for (int i = 1; i <= n; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
                 tempString.add("FizzBuzz");
-            }else if (i % 3 == 0) {
+            } else if (i % 3 == 0) {
                 tempString.add("Fizz");
-            }else if (i % 5 == 0) {
+            } else if (i % 5 == 0) {
                 tempString.add("Buzz");
-            }else {
+            } else {
                 tempString.add("" + i);
             }
         }
@@ -366,6 +385,7 @@ public class LeetCodeQuestion {
      * (water inside that isn't connected to the water around the island). One cell is a square with side length 1.
      * The grid is rectangular, width and height don't exceed 100. Determine the perimeter of the island.
      * 463
+     *
      * @param grid
      * @return
      */
@@ -379,7 +399,7 @@ public class LeetCodeQuestion {
             for (int j = 0; j < column; j++) {
                 if (grid[i][j] == 1) {
                     oneNumbers++;
-                }else {
+                } else {
                     continue;
                 }
                 if (j != column - 1 && grid[i][j] == grid[i][j + 1]) {
@@ -400,6 +420,7 @@ public class LeetCodeQuestion {
      * The Next Greater Number of a number x in nums1 is the first greater number to its right in nums2. If it does
      * not exist, output -1 for this number.
      * 496
+     *
      * @param nums1
      * @param nums2
      * @return
@@ -466,6 +487,7 @@ public class LeetCodeQuestion {
      * The input will be two strings, and the output needs to be the length of the longest uncommon subsequence. If
      * the longest uncommon subsequence doesn't exist, return -1.
      * 521
+     *
      * @param a
      * @param b
      * @return
@@ -487,12 +509,13 @@ public class LeetCodeQuestion {
     /**
      * You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one
      * of you take turns to remove 1 to 3 stones. The one who removes the last stone will be the winner. You will take
-     *  the first turn to remove the stones.
+     * the first turn to remove the stones.
      * Both of you are very clever and have optimal strategies for the game. Write a function to determine whether you
-     *  can win the game given the number of stones in the heap.
+     * can win the game given the number of stones in the heap.
      * For example, if there are 4 stones in the heap, then you will never win the game: no matter 1, 2, or 3 stones
      * you remove, the last stone will always be removed by your friend.
-     *  292
+     * 292
+     *
      * @param n
      * @return
      */
@@ -506,6 +529,7 @@ public class LeetCodeQuestion {
     /**
      * Given an array of integers, every element appears twice except for one. Find that single one.
      * 136
+     *
      * @param nums
      * @return
      */
@@ -525,6 +549,7 @@ public class LeetCodeQuestion {
     /**
      * Given a binary array, find the maximum number of consecutive 1s in this array.
      * 485
+     *
      * @param nums
      * @return
      */
@@ -534,7 +559,7 @@ public class LeetCodeQuestion {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 0) {
                 count = 0;
-            }else {
+            } else {
                 count++;
                 if (count > max) {
                     max = count;
@@ -549,6 +574,7 @@ public class LeetCodeQuestion {
      * The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf
      * node.
      * 104
+     *
      * @param root
      * @return
      */
@@ -569,6 +595,7 @@ public class LeetCodeQuestion {
      * Only the first letter in this word is capital if it has more than one letter, like "Google".
      * Otherwise, we define that this word doesn't use capitals in a right way.
      * 520
+     *
      * @param word
      * @return
      */
@@ -585,6 +612,7 @@ public class LeetCodeQuestion {
     /**
      * Invert a binary tree.
      * 226
+     *
      * @param root
      * @return
      */
@@ -638,7 +666,7 @@ public class LeetCodeQuestion {
      * @return
      */
     public int getSum(int a, int b) {
-        return b==0? a:getSum(a^b, (a&b)<<1);
+        return b == 0 ? a : getSum(a ^ b, (a & b) << 1);
     }
 
     /**
@@ -655,7 +683,7 @@ public class LeetCodeQuestion {
             return false;
         }
         List<Integer> integerList = new ArrayList<>();
-        inorder(root,integerList);
+        inorder(root, integerList);
         int l = 0;
         int r = integerList.size() - 1;
         while (l < r) {                                     //奇迹的时刻，先是中序遍历形成单调数组，然后左右两边查找，666
@@ -671,6 +699,7 @@ public class LeetCodeQuestion {
 
     /**
      * 对二叉树中序遍历后即可形成单调递增数组，厉害
+     *
      * @param root
      * @param integerList
      */
@@ -714,6 +743,7 @@ public class LeetCodeQuestion {
      * For example:
      * Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one digit, return it.
      * 258
+     *
      * @param num
      * @return
      */
@@ -735,6 +765,7 @@ public class LeetCodeQuestion {
      * String t is generated by random shuffling string s and then add one more letter at a random position.
      * Find the letter that was added in t.
      * 389
+     *
      * @param s
      * @param t
      * @return
@@ -742,10 +773,10 @@ public class LeetCodeQuestion {
     public static char findTheDifference(String s, String t) {
         int charCode = t.charAt(s.length());
         for (int i = 0; i < s.length(); ++i) {
-            charCode -= (int)s.charAt(i);
-            charCode += (int)t.charAt(i);
+            charCode -= (int) s.charAt(i);
+            charCode += (int) t.charAt(i);
         }
-        return (char)charCode;
+        return (char) charCode;
     }
 
     /**
@@ -756,9 +787,10 @@ public class LeetCodeQuestion {
      * You must do this in-place without making a copy of the array.
      * Minimize the total number of operations.
      * 283
+     *
      * @param nums
      */
-    public void moveZeroes(int[] nums) {
+    public static void moveZeroes(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 0) {
                 for (int j = i + 1; j < nums.length; j++) {
@@ -786,7 +818,7 @@ public class LeetCodeQuestion {
      * @param t
      * @return
      */
-    public String tree2str(TreeNode t) {
+    public static String tree2str(TreeNode t) {
         String tempString = "";
         if (t == null) {
             return "";
@@ -795,13 +827,422 @@ public class LeetCodeQuestion {
         if (t.left != null && t.right != null) {
             return tempString + "(" + tree2str(t.left) + ")" + "(" + tree2str(t.right) + ")";
         }
-        if (t.left != null && t.right == null) {
+        if (t.left != null) {
             return tempString + "(" + tree2str(t.left) + ")";
         }
-        if (t.left == null && t.right != null) {
+        if (t.right != null) {
             return tempString + "()" + "(" + tree2str(t.right) + ")";
         }
         return tempString;
+    }
+
+    /**
+     * Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is
+     * changed to the original key plus sum of all keys greater than the original key in BST.
+     * 538
+     *
+     * @param root
+     * @return
+     */
+    public static TreeNode convertBST(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        List<Integer> integerList = new ArrayList<>();
+        addVal(root, integerList);
+        putVal(root, integerList);
+
+        return root;
+    }
+
+    /**
+     * 中序遍历
+     *
+     * @param root
+     * @param integerList
+     */
+    public static void addVal(TreeNode root, List<Integer> integerList) {
+        if (root == null) {
+            return;
+        }
+        addVal(root.left, integerList);
+        integerList.add(root.val);
+        addVal(root.right, integerList);
+    }
+
+    /**
+     * 加在一起
+     *
+     * @param treeNode
+     * @param integerList
+     */
+    public static void putVal(TreeNode treeNode, List<Integer> integerList) {
+        if (treeNode == null) {
+            return;
+        }
+        putVal(treeNode.left, integerList);
+        for (int i = 0; i < integerList.size(); i++) {
+            if (integerList.get(i) == treeNode.val) {
+                for (int k = i + 1; k < integerList.size(); k++) {
+                    treeNode.val = treeNode.val + integerList.get(k);
+                }
+                break;
+            }
+        }
+        putVal(treeNode.right, integerList);
+    }
+
+    /**
+     * For a web developer, it is very important to know how to design a web page's size. So, given a specific
+     * rectangular web page’s area, your job by now is to design a rectangular web page, whose length L and width W
+     * satisfy the following requirements:
+     * 492
+     *
+     * @param area
+     * @return
+     */
+    public int[] constructRectangle(int area) {
+        int[] arrayInt = new int[2];
+        if (area == 1) {
+            return new int[]{1, 1};
+        }
+        int min = Integer.MAX_VALUE;
+        for (int i = 1; i <= area / 2; i++) {
+            if ((i * (area / i) == area) && (Math.abs(i - area / i) < min)) {
+                arrayInt[0] = Math.max(i, area / i);
+                arrayInt[1] = Math.min(i, area / i);
+                min = Math.abs(i - area / i);
+            }
+        }
+        return arrayInt;
+    }
+
+    /**
+     * Given an m * n matrix M initialized with all 0's and several update operations.
+     * Operations are represented by a 2D array, and each operation is represented by an array with two positive
+     * integers a and b, which means M[i][j] should be added by one for all 0 <= i < a and 0 <= j < b.
+     * You need to count and return the number of maximum integers in the matrix after performing all the operations.
+     * 598
+     *
+     * @param m
+     * @param n
+     * @param ops
+     * @return
+     */
+    public static int maxCount(int m, int n, int[][] ops) {
+        if (ops.length == 0) {
+            return m * n;
+        }
+        int count = 0;
+        int row = Integer.MAX_VALUE;
+        int line = Integer.MAX_VALUE;
+        for (int i = 0; i < ops.length; i++) {
+            if (row > ops[i][0]) {
+                row = ops[i][0];
+            }
+            if (line > ops[i][1]) {
+                line = ops[i][1];
+            }
+        }
+        return row * line;
+    }
+
+    /**
+     * Given a non-empty integer array of size n, find the minimum number of moves required to make all array elements
+     * equal, where a move is incrementing n - 1 elements by 1.
+     * 453
+     *
+     * @param nums
+     * @return
+     */
+    public static int minMoves(int[] nums) {
+        if (nums.length == 0) return 0;
+        int min = nums[0];
+        for (int n : nums) min = Math.min(min, n);
+        int res = 0;
+        for (int n : nums) res += n - min;
+        return res;
+    }
+
+    /**
+     * Given two arrays, write a function to compute their intersection.
+     * 349
+     * 这是求两个数组的交集，亏我没看懂题目还抄答案
+     * @param nums1
+     * @param nums2
+     * @return
+     */
+    public static int[] intersection(int[] nums1, int[] nums2) {
+        Set<Integer> set = new HashSet<>();
+        Set<Integer> intersect = new HashSet<>();
+        for (int i = 0; i < nums1.length; i++) {
+            set.add(nums1[i]);
+        }
+        for (int i = 0; i < nums2.length; i++) {
+            if (set.contains(nums2[i])) {
+                intersect.add(nums2[i]);
+            }
+        }
+        int[] result = new int[intersect.size()];
+        int i = 0;
+        for (Integer num : intersect) {
+            result[i++] = num;
+        }
+        return result;
+    }
+
+    /**
+     * Related to question Excel Sheet Column Title
+     * Given a column title as appear in an Excel sheet, return its corresponding column number.
+     * 171
+     * @param s
+     * @return
+     */
+    public static int titleToNumber(String s) {
+        int count = 0;
+        char[] chars = s.toCharArray();
+        int k = chars.length - 1;
+        for (int i = 0; i < chars.length; i++) {
+            count = count + (int) Math.pow(26, k--) * (chars[i] - 'A' + 1);
+        }
+        return count;
+    }
+
+    /**
+     * Given a binary search tree with non-negative values, find the minimum absolute difference between values of any two nodes
+     * 530
+     * @param root
+     * @return
+     */
+    public static int getMinimumDifference(TreeNode root) {
+        List<Integer> integerList = new ArrayList<>();
+        getAllNumber(root, integerList);
+        int[] arrayInt = new int[integerList.size()];
+        for (int i = 0; i < integerList.size(); i++) {
+            arrayInt[i] = integerList.get(i);
+        }
+        Arrays.sort(arrayInt);
+        int min = arrayInt[1] - arrayInt[0];
+        for (int i = 1; i < arrayInt.length; i++) {
+            if ((arrayInt[i] - arrayInt[i - 1]) < min) {
+                min = arrayInt[i] - arrayInt[i - 1];
+            }
+        }
+        return min;
+    }
+
+    public static void getAllNumber(TreeNode root, List<Integer> integerList) {
+        if (root.left != null) {
+            getAllNumber(root.left, integerList);
+        }
+        integerList.add(root.val);
+        if (root.right != null) {
+            getAllNumber(root.right, integerList);
+        }
+    }
+
+    /**
+     * Given an arbitrary ransom note string and another string containing letters from all the magazines, write a
+     * function that will return true if the ransom note can be constructed from the magazines ; otherwise, it will
+     * return false.
+     * Each letter in the magazine string can only be used once in your ransom note.
+     * 383
+     * @param ransomNote
+     * @param magazine
+     * @return
+     */
+    public static boolean canConstruct(String ransomNote, String magazine) {
+        if (ransomNote.length() == 0) {
+            return true;
+        }
+        char[] ransomChars = ransomNote.toCharArray();
+        Arrays.sort(ransomChars);
+        char[] magazineChars = magazine.toCharArray();
+        Arrays.sort(magazineChars);
+        int k = 0;
+        for (int i = 0; i < magazineChars.length; i++) {
+            if (ransomChars[k] == magazineChars[i]) {
+                k++;
+            }
+            if (k == ransomChars.length) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Say you have an array for which the ith element is the price of a given stock on day i.
+     * Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one
+     * and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the
+     * same time (ie, you must sell the stock before you buy again).
+     * 122
+     * @param prices
+     * @return
+     */
+    public static int maxProfit(int[] prices) {
+        int money = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] > prices[i - 1]) {
+                money = money + (prices[i] - prices[i - 1]);
+            }
+        }
+        return money;
+    }
+
+    /**
+     * Assume you are an awesome parent and want to give your children some cookies. But, you should give each child
+     * at most one cookie. Each child i has a greed factor gi, which is the minimum size of a cookie that the child
+     * will be content with; and each cookie j has a size sj. If sj >= gi, we can assign the cookie j to the child i,
+     * and the child i will be content. Your goal is to maximize the number of your content children and output the
+     * maximum number.
+     * 455
+     * @param g
+     * @param s
+     * @return
+     */
+    public static int findContentChildren(int[] g, int[] s) {
+        Arrays.sort(g);
+        Arrays.sort(s);
+        int k = 0;
+        int count = 0;
+        for (int i = 0; i < s.length; i++) {
+            if (s[i] >= g[k]) {
+                k++;
+                count++;
+            }
+            if (k == g.length) {
+                return count;
+            }
+        }
+        return count;
+    }
+
+    /**
+     * Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to
+     * a specific target number.
+     * The function twoSum should return indices of the two numbers such that they add up to the target, where index1
+     * must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.
+     * You may assume that each input would have exactly one solution and you may not use the same element twice.
+     * 167
+     * @param numbers
+     * @param target
+     * @return
+     */
+    public static int[] twoSum4(int[] numbers, int target) {
+        int i = 0;
+        int j = numbers.length - 1;
+        while (i < j) {
+            int sum = numbers[i] + numbers[j];
+            if (sum < target) {
+                i++;
+            } else if (sum > target) {
+                j--;
+            } else return new int[]{i+1, j+1};
+        }
+        return null;
+    }
+
+    /**
+     * Find the sum of all left leaves in a given binary tree.
+     * 404
+     * @param root
+     * @return
+     */
+    public int sumOfLeftLeaves(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        if (root.left != null && root.left.left == null && root.left.right == null ) {
+            return root.left.val + sumOfLeftLeaves(root.right);
+        } else return sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
+    }
+
+    /**
+     * Given a binary tree, return the tilt of the whole tree.
+     * The tilt of a tree node is defined as the absolute difference between the sum of all left subtree node values
+     * and the sum of all right subtree node values. Null node has tilt 0.
+     * The tilt of the whole tree is defined as the sum of all nodes' tilt.
+     * 563
+     * @param root
+     * @return
+     */
+    public int findTilt(TreeNode root) {
+        traverse(root);
+        return tilt;
+    }
+
+    int tilt = 0;
+
+    public int traverse(TreeNode root)
+    {
+        if(root==null )
+            return 0;
+        int left=traverse(root.left);
+        int right=traverse(root.right);
+        tilt+=Math.abs(left-right);
+        return left+right+root.val;
+    }
+
+    /* Given an array of size n, find the majority element. The majority element is the element that appears more
+     * than ⌊ n/2 ⌋ times.
+     * You may assume that the array is non-empty and the majority element always exist in the array.
+     * @param nums
+     * @return
+     */
+    public static int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length / 2];
+    }
+
+    /**
+     * Suppose Andy and Doris want to choose a restaurant for dinner, and they both have a list of favorite
+     * restaurants represented by strings.
+     * You need to help them find out their common interest with the least list index sum. If there is a choice tie
+     * between answers, output all of them with no order requirement. You could assume there always exists an answer.
+     * 599
+     * @param list1
+     * @param list2
+     * @return
+     */
+    public static String[] findRestaurant(String[] list1, String[] list2) {
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        int sign = 0;
+        int min = Integer.MAX_VALUE;
+        List<String> stringList = new ArrayList<>();
+        for (int i = 0; i < list1.length; i++) {
+            hashMap.put(list1[i], i);
+        }
+        for (int i = 0; i < list2.length; i++) {
+            if (hashMap.containsKey(list2[i])) {
+                int temp = hashMap.get(list2[i]) + i;
+                if (temp < min) {
+                    min = temp;
+                    stringList.clear();
+                    stringList.add(list2[i]);
+                } else if (temp == min) {
+                    stringList.add(list2[i]);
+                }
+            }
+        }
+        return stringList.toArray(new String[stringList.size()]);
+    }
+
+    /**
+     * Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+     * 387
+     * @param s
+     * @return
+     */
+    // TODO: 17-9-11 这个题不难，我可以做出来，但我现在不想做了，做的水题太多了，明天再做 
+    public static int firstUniqChar(String s) {
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (hashMap.containsKey(s.charAt(i))) {
+                hashMap.remove(s.charAt(i));
+            } else hashMap.put(s.charAt(i), i);
+        }
+        return (int)hashMap.values().toArray()[0];
     }
 
 }
