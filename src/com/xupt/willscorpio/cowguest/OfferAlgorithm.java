@@ -83,11 +83,22 @@ public class OfferAlgorithm {
      * @return
      */
     boolean isSymmetrical(TreeNode pRoot) {
-        getValue(pRoot);
+        if (pRoot == null) {
+            return true;
+        }
+        return getSymmetrical(pRoot.left, pRoot.right);
     }
 
-    private int getValue(TreeNode root) {
-        if(root == null) return 0;
-
+    private boolean getSymmetrical(TreeNode left, TreeNode right) {
+        if (left == null && right == null) {
+            return true;
+        }
+        if (left == null || right == null) {
+            return false;
+        }
+        return left.val == right.val &&
+                getSymmetrical(left.left, right.right) &&
+                getSymmetrical(left.right, right.left);
     }
+
 }
