@@ -2,6 +2,7 @@ package com.xupt.willscorpio.cowguest;
 
 import com.xupt.willscorpio.datastructute.ListNode;
 
+import javax.swing.*;
 import java.util.*;
 
 
@@ -277,8 +278,132 @@ public class OfferAlgorithm {
     }
 
     private ArrayList<String> permuta(String string, int length) {
-
+        return null;
     }
 
+    /**
+     * 输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。例如输入数组{3，32，321}，则打印
+     * 出这三个数字能排成的最小数字为321323。
+     * @param numbers
+     * @return
+     */
+    public String PrintMinNumber(int [] numbers) {
+        String[] strings = new String[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            strings[i] = "" + numbers[i];
+        }
+        StringBuilder answer = new StringBuilder();
 
+        Arrays.sort(strings, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                String s1 = o1 + o2;
+                String s2 = o2 + o1;
+                return s1.compareTo(s2);
+            }
+
+        });
+        for (int i = 0; i < strings.length; i++) {
+            answer.append(strings[i]);
+        }
+
+        return answer.toString();
+    }
+
+    /**
+     * 将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的
+     * 库函数。 数值为0或者字符串不是一个合法的数值则返回0。
+     * @param str
+     * @return
+     */
+    public int StrToInt(String str) {
+        if (str.equals("") || str.length() == 0)
+            return 0;
+        char[] a = str.toCharArray();
+        int fuhao = 0;
+        if (a[0] == '-')
+            fuhao = 1;
+        int sum = 0;
+        for (int i = fuhao; i < a.length; i++)
+        {
+            if (a[i] == '+')
+                continue;
+            if (a[i] < 48 || a[i] > 57)
+                return 0;
+            sum = sum * 10 + a[i] - 48;
+        }
+        return fuhao == 0 ? sum : sum * -1;
+    }
+
+    /**
+     * 输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）
+     * @param root1
+     * @param root2
+     * @return
+     */
+    public boolean HasSubtree(TreeNode root1,TreeNode root2) {
+        boolean result = false;
+        if (root1 != null && root2 != null) {
+            if (root1.val == root2.val) {
+                result = HasSubtree2(root1, root2);
+            }
+            if(!result) result = HasSubtree(root1.left, root2);
+            if(!result) result = HasSubtree(root1.right, root2);
+        }
+        return result;
+    }
+
+    public boolean HasSubtree2(TreeNode root1, TreeNode root2) {
+        if (root1 == null && root2 != null)  return false;
+        if (root2 == null)  return true;
+        if(root1.val != root2.val) return false;
+        return HasSubtree2(root1.left, root2.left) && HasSubtree2(root1.right, root2.right);
+    }
+
+    /**
+     * 给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
+     *
+     * @param pHead
+     * @return
+     */
+    public ListNode EntryNodeOfLoop(ListNode pHead) {
+        if (pHead == null || pHead.next == null) {
+            return null;
+        }
+        HashSet<ListNode> hashSet = new HashSet<>();
+        while (pHead.next != null) {
+            if (hashSet.contains(pHead)) {
+                return pHead;
+            }
+            hashSet.add(pHead);
+            pHead = pHead.next;
+        }
+        return null;
+    }
+
+    /**
+     * 给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
+     * @param pHead
+     * @return
+     */
+    public ListNode EntryNodeOfLoopV2(ListNode pHead) {
+        if (pHead == null || pHead.next == null) {
+            return null;
+        }
+        ListNode quick = pHead;
+        ListNode slow = pHead;
+        while (quick != null && quick.next != null) {
+            quick = quick.next.next;
+            slow = slow.next;
+            if (quick == slow) {
+                slow = pHead;
+                while (slow != quick) {
+                    slow = slow.next;
+                    quick = quick.next;
+                }
+                if(slow == quick) return slow;
+            }
+        }
+        return null;
+    }
 }
