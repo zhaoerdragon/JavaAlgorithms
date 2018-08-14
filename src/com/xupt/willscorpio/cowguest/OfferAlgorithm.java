@@ -156,12 +156,6 @@ public class OfferAlgorithm {
         return sum;
     }
 
-    public static void main(String[] args) {
-        OfferAlgorithm offerAlgorithm = new OfferAlgorithm();
-        int answer = offerAlgorithm.GetNumberOfK1(new int[]{1, 2, 2, 3}, 2);
-        System.out.println(answer);
-    }
-
     public int GetNumberOfK1(int[] array, int k) {
         return searchK(array, k + 0.5f) - searchK(array, k - 0.5f);
     }
@@ -274,7 +268,7 @@ public class OfferAlgorithm {
         if (str == null || str.length() == 0) {
             return null;
         }
-
+        return null;
     }
 
     private ArrayList<String> permuta(String string, int length) {
@@ -405,5 +399,70 @@ public class OfferAlgorithm {
             }
         }
         return null;
+    }
+
+    /**
+     * 汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，就是用字符串模拟这个指令的运算结果。对于一个给定的字符序列S，请
+     * 你把其循环左移K位后的序列输出。例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，即“XYZdefabc”。是不是很简单？OK，
+     * 搞定它！
+     *
+     * @param str
+     * @param n
+     * @return
+     */
+    public String LeftRotateString(String str, int n) {
+        if (n == 0 || str.equals("")) {
+
+            return str;
+        }
+        String string1 = str.substring(0, n);
+        String string2 = str.substring(n);
+        return string2 + string1;
+    }
+
+    /**
+     * 从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行。
+     * @param pRoot
+     * @return
+     */
+    ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
+        ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+        depth(pRoot, 1, list);
+        return list;
+    }
+
+    private void depth(TreeNode root, int depth, ArrayList<ArrayList<Integer>> list) {
+        if(root == null) return;
+        if(depth > list.size())
+            list.add(new ArrayList<Integer>());
+        list.get(depth -1).add(root.val);
+
+        depth(root.left, depth + 1, list);
+        depth(root.right, depth + 1, list);
+    }
+
+    /**
+     * 每年六一儿童节,牛客都会准备一些小礼物去看望孤儿院的小朋友,今年亦是如此。HF作为牛客的资深元老,自然也准备了一些小游戏。其中,有个
+     * 游戏是这样的:首先,让小朋友们围成一个大圈。然后,他随机指定一个数m,让编号为0的小朋友开始报数。每次喊到m-1的那个小朋友要出列唱首
+     * 歌,然后可以在礼品箱中任意的挑选礼物,并且不再回到圈中,从他的下一个小朋友开始,继续0...m-1报数....这样下去....直到剩下最后一个小
+     * 朋友,可以不用表演,并且拿到牛客名贵的“名侦探柯南”典藏版(名额有限哦!!^_^)。请你试着想下,哪个小朋友会得到这份礼品呢？(注：小朋友
+     * 的编号是从0到n-1)
+     *
+     * @return
+     */
+    public static void main(String[] args) {
+        OfferAlgorithm offerAlgorithm = new OfferAlgorithm();
+        offerAlgorithm.LastRemaining_Solution(5, 2);
+    }
+
+    public int LastRemaining_Solution(int n, int m) {
+        if (n == 0 || m == 0) {
+            return -1;
+        }
+        int s = 0;
+        for (int i = 2; i <= n; i++) {
+            s = (s + m) % i;
+        }
+        return s;
     }
 }
