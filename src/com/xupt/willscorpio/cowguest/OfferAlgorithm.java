@@ -227,7 +227,18 @@ public class OfferAlgorithm {
      * @param num2
      */
     public void FindNumsAppearOnce(int [] array,int num1[] , int num2[]) {
-
+        if(array.length < 2) return ;
+        int myxor = 0;
+        int flag = 1;
+        for(int i = 0 ; i < array.length; ++ i )
+            myxor ^= array[i];
+        while((myxor & flag) == 0) flag <<= 1;
+        // num1[0] = myxor;
+        //num2[0] = myxor;
+        for(int i = 0; i < array.length; ++ i ){
+            if((flag & array[i]) == 0) num2[0]^= array[i];
+            else num1[0]^= array[i];
+        }
     }
 
     /**
@@ -464,5 +475,123 @@ public class OfferAlgorithm {
             s = (s + m) % i;
         }
         return s;
+    }
+
+    /**
+     * 输入一个递增排序的数组和一个数字S，在数组中查找两个数，使得他们的和正好是S，如果有多对数字的和等于S，输出两个数的乘积最小的。
+     *
+     * @param array
+     * @param sum
+     * @return
+     */
+    public ArrayList<Integer> FindNumbersWithSum(int[] array, int sum) {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        if (array.length == 0) {
+            return arrayList;
+        }
+        HashSet<Integer> hashSet = new HashSet<>();
+        int count = 0;
+        int value = Integer.MAX_VALUE;
+        for (int i = 0; i < array.length; i++) {
+            hashSet.add(array[i]);
+            if (array[i] == sum / 2) {
+                count++;
+            }
+        }
+        if (count >= 2) {
+            arrayList.add(sum / 2);
+            arrayList.add(sum / 2);
+            value = (int) Math.pow(sum / 2, 2);
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] >= sum) {
+                break;
+            }
+            if (hashSet.contains(sum - array[i]) && ((sum - array[i]) * array[i]) < value) {
+                arrayList.clear();
+                arrayList.add(Math.min(sum - array[i], array[i]));
+                arrayList.add(Math.max(sum - array[i], array[i]));
+                value = (sum - array[i]) * array[i];
+            }
+        }
+        return arrayList;
+    }
+
+    /**
+     *  在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几
+     *  次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。
+     * @param numbers
+     * @param length
+     * @param duplication
+     * @return
+     */
+    public boolean duplicate(int numbers[],int length,int [] duplication) {
+        boolean[] k = new boolean[length];
+        for (int i = 0; i < k.length; i++) {
+            if (k[numbers[i]] == true) {
+                duplication[0] = numbers[i];
+                return true;
+            }
+            k[numbers[i]] = true;
+        }
+        return false;
+    }
+
+    /**
+     * 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。要求不能创建任何新的结点，只能调整树中结点指针的指向。
+     * @param pRootOfTree
+     * @return
+     */
+    public TreeNode Convert(TreeNode pRootOfTree) {
+        return null;
+    }
+
+    /**
+     * 数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中
+     * 出现了5次，超过数组长度的一半，因此输出2。如果不存在则输出0。
+     * @param array
+     * @return
+     */
+    public int MoreThanHalfNum_Solution(int [] array) {
+        int n = array.length;
+        if (n == 0) return 0;
+
+        int num = array[0], count = 1;
+        for (int i = 1; i < n; i++) {
+            if (array[i] == num) count++;
+            else count--;
+            if (count == 0) {
+                num = array[i];
+                count = 1;
+            }
+        }
+        // Verifying
+        count = 0;
+        for (int i = 0; i < n; i++) {
+            if (array[i] == num) count++;
+        }
+        if (count * 2 > n) return num;
+        return 0;
+    }
+
+    /**
+     * 小明很喜欢数学,有一天他在做数学作业时,要求计算出9~16的和,他马上就写出了正确答案是100。但是他并不满足于此,他在想究竟有多少种连续
+     * 的正数序列的和为100(至少包括两个数)。没多久,他就得到另一组连续正数和为100的序列:18,19,20,21,22。现在把问题交给你,你能不能也
+     * 很快的找出所有和为S的连续正数序列? Good Luck!
+     * @param sum
+     * @return
+     */
+    public ArrayList<ArrayList<Integer> > FindContinuousSequence(int sum) {
+        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+        for (int n = (int) Math.sqrt(2 * sum); n >= 2; n--) {
+            if ((n & 1) == 1 && sum % n == 0 || (sum % n) * 2 == n) {
+                ArrayList<Integer> list = new ArrayList<>();
+                for (int j = 0, k = (sum / n) - (n - 1) / 2; j < n; j++, k++) {
+                    list.add(k);
+                }
+                ans.add(list);
+            }
+        }
+        return ans;
     }
 }
