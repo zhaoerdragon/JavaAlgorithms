@@ -461,11 +461,6 @@ public class OfferAlgorithm {
      *
      * @return
      */
-    public static void main(String[] args) {
-        OfferAlgorithm offerAlgorithm = new OfferAlgorithm();
-        offerAlgorithm.LastRemaining_Solution(5, 2);
-    }
-
     public int LastRemaining_Solution(int n, int m) {
         if (n == 0 || m == 0) {
             return -1;
@@ -594,4 +589,233 @@ public class OfferAlgorithm {
         }
         return ans;
     }
+
+    public static void main(String[] args) {
+        OfferAlgorithm offerAlgorithm = new OfferAlgorithm();
+        boolean answer = offerAlgorithm.isContinuous(new int[]{1,0,0,1,0});
+        System.out.println(answer);
+    }
+
+    /**
+     * LL今天心情特别好,因为他去买了一副扑克牌,发现里面居然有2个大王,2个小王(一副牌原本是54张^_^)...他随机从中抽出了5张牌,想测测自己的手气
+     * ,看看能不能抽到顺子,如果抽到的话,他决定去买体育彩票,嘿嘿！！“红心A,黑桃3,小王,大王,方片5”,“Oh My God!”不是顺子.....LL不高兴了,他想
+     * 了想,决定大\小 王可以看成任何数字,并且A看作1,J为11,Q为12,K为13。上面的5张牌就可以变成“1,2,3,4,5”(大小王分别看作2和4),“So Lucky!
+     * ”。LL决定去买体育彩票啦。 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何， 如果牌能组成顺子就输出true，否则就输出false。
+     * 为了方便起见,你可以认为大小王是0。
+     *
+     * @param numbers
+     * @return
+     */
+    public boolean isContinuous(int[] numbers) {
+        if (numbers.length == 0) {
+            return false;
+        }
+        if (numbers.length == 1) {
+            return true;
+        }
+        Arrays.sort(numbers);
+        int zero = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == 0) {
+                zero++;
+            } else {
+                break;
+            }
+        }
+        int fu = 0;
+        for (int i = zero; i < numbers.length - 1; i++) {
+            if (numbers[i + 1] - numbers[i] == 1) {
+                continue;
+            } else if (numbers[i + 1] - numbers[i] == 0) {
+                return false;
+            } else {
+                fu = fu + numbers[i + 1] - numbers[i] - 1;
+            }
+        }
+        if (zero >= fu) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * 在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组,求出这个数组中的逆序对的总数P。
+     * 并将P对1000000007取模的结果输出。 即输出P%1000000007
+     *
+     * @param array
+     * @return
+     */
+    public int InversePairs(int[] array) {
+        long sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    sum++;
+                }
+            }
+        }
+        return (int) (sum % 1000000007);
+    }
+
+    /**
+     * 输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+     * 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.
+     * @param matrix
+     * @return
+     */
+    public ArrayList<Integer> printMatrix(int [][] matrix) {
+        ArrayList<Integer> result = new ArrayList<Integer>() ;
+        if(matrix==null || matrix.length==0) { return result ; }
+
+        printMatrixClockWisely(matrix, 0, 0, matrix.length - 1, matrix[0].length - 1, result);
+
+        return result ;
+    }
+
+    public void printMatrixClockWisely(int[][] matrix, int startRow, int startCol, int endRow, int endCol, ArrayList<Integer> result) {
+        if(startRow<endRow && startCol<endCol) {
+            for(int j=startCol; j<=endCol; j++) { result.add(matrix[startRow][j]) ; }   //Right
+            for(int i=startRow+1; i<=endRow-1; i++) { result.add(matrix[i][endCol]) ; }     //Down
+            for(int j=endCol; j>=startCol; j--) { result.add(matrix[endRow][j]) ; }     //Left
+            for(int i=endRow-1; i>=startRow+1; i--) { result.add(matrix[i][startCol]) ; }   //Up
+            printMatrixClockWisely(matrix, startRow + 1, startCol + 1, endRow - 1, endCol - 1, result) ;
+        }else if(startRow==endRow && startCol<endCol) {
+            for(int j=startCol; j<=endCol; j++) { result.add(matrix[startRow][j]) ; }
+        }else if(startRow<endRow && startCol==endCol) {
+            for(int i=startRow; i<=endRow; i++) { result.add(matrix[i][endCol]) ; }
+        }else if(startRow==endRow && startCol==endCol) {
+            result.add(matrix[startRow][startCol]) ;
+        }else {
+            return ;
+        }
+    }
+
+    /**
+     * 从上往下打印出二叉树的每个节点，同层节点从左至右打印。
+     * @param root
+     * @return
+     */
+    public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        if(root == null) return list;
+        Deque<TreeNode> deque = new LinkedList<TreeNode>();
+
+        deque.add(root);
+        while(!deque.isEmpty()){
+            TreeNode t = deque.pop();
+            list.add(t.val);
+            if(t.left != null) deque.add(t.left);
+            if(t.right != null) deque.add(t.right);
+        }
+        return list;
+    }
+
+    /**
+     * 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。
+     * @param sequence
+     * @return
+     */
+    public boolean VerifySquenceOfBST(int [] sequence) {
+        if(sequence.length == 0) return false;
+        return IsTreeBST(sequence, 0, sequence.length-1);
+    }
+
+    public boolean IsTreeBST(int [] sequence,int start,int end ){
+        if(end <= start) return true;
+        int i = start;
+        for (; i < end; i++) {
+            if(sequence[i] > sequence[end]) break;
+        }
+        for (int j = i; j < end; j++) {
+            if(sequence[j] < sequence[end]) return false;
+        }
+        return IsTreeBST(sequence, start, i-1) && IsTreeBST(sequence, i, end-1);
+    }
+
+    /**
+     * 地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，但是不能进入行坐标和列坐标的数
+     * 位之和大于k的格子。 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。但是，它不能进入方格（35,38），因为3+5+3+8
+     * = 19。请问该机器人能够达到多少个格子？
+     * @param threshold
+     * @param rows
+     * @param cols
+     * @return
+     */
+    public int movingCount(int threshold, int rows, int cols)
+    {
+        boolean[] visited=new boolean[rows*cols];
+        return movingCountCore(threshold, rows, cols, 0,0,visited);
+    }
+    private int movingCountCore(int threshold, int rows, int cols,
+                                int row,int col,boolean[] visited) {
+        if(row<0||row>=rows||col<0||col>=cols) return 0;
+        int i=row*cols+col;
+        if(visited[i]||!checkSum(threshold,row,col)) return 0;
+        visited[i]=true;
+        return 1+movingCountCore(threshold, rows, cols,row,col+1,visited)
+                +movingCountCore(threshold, rows, cols,row,col-1,visited)
+                +movingCountCore(threshold, rows, cols,row+1,col,visited)
+                +movingCountCore(threshold, rows, cols,row-1,col,visited);
+    }
+    private boolean checkSum(int threshold, int row, int col) {
+        int sum=0;
+        while(row!=0){
+            sum+=row%10;
+            row=row/10;
+        }
+        while(col!=0){
+            sum+=col%10;
+            col=col/10;
+        }
+        if(sum>threshold) return false;
+        return true;
+    }
+
+    /**
+     * 请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行
+     * 以此类推。
+     * @param pRoot
+     * @return
+     */
+    public ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
+        ArrayList<ArrayList<Integer>> aList=new ArrayList<ArrayList<Integer>>();
+        if(pRoot==null)
+            return aList;
+
+        Stack<TreeNode> s1=new Stack<TreeNode>();
+        s1.add(pRoot);
+        Stack<TreeNode> s2=new Stack<TreeNode>();
+        while(!s1.isEmpty()||!s2.isEmpty()){
+            if(!s1.isEmpty()){
+                ArrayList<Integer> aList2=new ArrayList<Integer>();
+                while(!s1.isEmpty()){
+                    TreeNode p=s1.pop();
+                    aList2.add(p.val);
+                    if(p.left!=null)
+                        s2.add(p.left);
+                    if(p.right!=null)
+                        s2.add(p.right);
+                }
+                aList.add(aList2);
+
+            }
+            else {
+                ArrayList<Integer> aList2=new ArrayList<Integer>();
+                while(!s2.isEmpty()){
+
+                    TreeNode p=s2.pop();
+                    if(p.right!=null)
+                        s1.add(p.right);
+                    if(p.left!=null)
+                        s1.add(p.left);
+                    aList2.add(p.val);
+
+                }
+                aList.add(aList2);
+            }
+        }
+        return aList;
+    }
+
 }
