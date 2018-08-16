@@ -590,11 +590,6 @@ public class OfferAlgorithm {
         return ans;
     }
 
-    public static void main(String[] args) {
-        OfferAlgorithm offerAlgorithm = new OfferAlgorithm();
-        boolean answer = offerAlgorithm.isContinuous(new int[]{1,0,0,1,0});
-        System.out.println(answer);
-    }
 
     /**
      * LL今天心情特别好,因为他去买了一副扑克牌,发现里面居然有2个大王,2个小王(一副牌原本是54张^_^)...他随机从中抽出了5张牌,想测测自己的手气
@@ -775,10 +770,10 @@ public class OfferAlgorithm {
     /**
      * 请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行
      * 以此类推。
-     * @param pRoot
+     *
      * @return
      */
-    public ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
+    /*public ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
         ArrayList<ArrayList<Integer>> aList=new ArrayList<ArrayList<Integer>>();
         if(pRoot==null)
             return aList;
@@ -816,6 +811,27 @@ public class OfferAlgorithm {
             }
         }
         return aList;
+    }*/
+    public static void main(String[] args) {
+        maxWork(new int[]{1, 3, 12, 6, 10});
+    }
+
+    /**
+     * 最大工时
+     * @param workinghours
+     */
+    public static int  maxWork(int[] workinghours) {
+        if (workinghours.length == 0) {
+            return 0;
+        }
+        Arrays.sort(workinghours);
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < workinghours.length - 1; i++) {
+            if (workinghours[i + 1] - workinghours[i] > max) {
+                max = workinghours[i + 1] - workinghours[i];
+            }
+        }
+        return max;
     }
 
 }
