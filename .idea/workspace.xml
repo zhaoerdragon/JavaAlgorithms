@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55b24c08-2245-43bc-bb69-58782e4f9f4e" name="Default Changelist" comment="" />
+    <list default="true" id="55b24c08-2245-43bc-bb69-58782e4f9f4e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/xupt/willscorpio/algorithm/AgainAndAgainAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/TreeNode.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,36 +22,37 @@
     <session id="1711407624">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="3" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.4" value="2" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="24" />
+          <entry key="java" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="24" />
+          <entry key="JAVA" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3145" />
+          <entry key="java" value="3765" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3145" />
+          <entry key="JAVA" value="3765" />
         </counts>
       </usages-collector>
     </session>
@@ -57,17 +62,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/OfferAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10548">
+            <state relative-caret-position="14832">
               <caret line="837" selection-start-line="837" selection-end-line="837" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/KingAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="10" column="73" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/algorithm/AgainAndAgainAlgorithm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="829">
+              <caret line="71" column="61" lean-forward="true" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -135,8 +149,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/TreeNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="144">
+              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+              <folding>
+                <element signature="e#138#139#0" expanded="true" />
+                <element signature="e#161#162#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -173,6 +191,8 @@
         <option value="$PROJECT_DIR$/src/com/xupt/willscorpio/utils/BitDance3Algorithm.java" />
         <option value="$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/OfferAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/KingAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/TreeNode.java" />
+        <option value="$PROJECT_DIR$/src/com/xupt/willscorpio/algorithm/AgainAndAgainAlgorithm.java" />
       </list>
     </option>
   </component>
@@ -183,7 +203,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="238" />
+    <option name="x" value="329" />
     <option name="y" value="-11" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
@@ -197,68 +217,40 @@
         <subPane>
           <expand>
             <path>
-              <item name="JavaAlgorithms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaAlgorithms" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaAlgorithms-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaAlgorithms-master" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="JavaAlgorithms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaAlgorithms" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaAlgorithms-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaAlgorithms-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="JavaAlgorithms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaAlgorithms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="willscorpio" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaAlgorithms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaAlgorithms" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaAlgorithms-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaAlgorithms-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="willscorpio" type="462c0819:PsiDirectoryNode" />
-              <item name="cowguest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="JavaAlgorithms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaAlgorithms" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaAlgorithms-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaAlgorithms-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="willscorpio" type="462c0819:PsiDirectoryNode" />
-              <item name="datastructute" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaAlgorithms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaAlgorithms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="willscorpio" type="462c0819:PsiDirectoryNode" />
-              <item name="designs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaAlgorithms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaAlgorithms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="willscorpio" type="462c0819:PsiDirectoryNode" />
-              <item name="swordoffer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaAlgorithms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaAlgorithms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="willscorpio" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534333563560" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535092332392" />
     <property name="last_opened_file_path" value="E:/IDEAProject/PeanutImServer" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
@@ -280,7 +272,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.KingAlgorithm">
+  <component name="RunManager" selected="Application.AgainAndAgainAlgorithm">
+    <configuration name="AgainAndAgainAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xupt.willscorpio.algorithm.AgainAndAgainAlgorithm" />
+      <module name="JavaAlgorithms-master" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xupt.willscorpio.algorithm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BitDance2Algorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.xupt.willscorpio.utils.BitDance2Algorithm" />
       <module name="JavaAlgorithms-master" />
@@ -327,33 +332,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xupt.willscorpio.cowguest.TestAlgorithm" />
-      <module name="JavaAlgorithms-master" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xupt.willscorpio.cowguest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.TestAlgorithm" />
       <item itemvalue="Application.BitDance2Algorithm" />
       <item itemvalue="Application.MainFunction" />
       <item itemvalue="Application.OfferAlgorithm" />
       <item itemvalue="Application.KingAlgorithm" />
+      <item itemvalue="Application.AgainAndAgainAlgorithm" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AgainAndAgainAlgorithm" />
         <item itemvalue="Application.KingAlgorithm" />
         <item itemvalue="Application.OfferAlgorithm" />
         <item itemvalue="Application.MainFunction" />
         <item itemvalue="Application.BitDance2Algorithm" />
-        <item itemvalue="Application.TestAlgorithm" />
       </list>
     </recent_temporary>
   </component>
@@ -384,7 +376,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12526652" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12739871" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -393,7 +385,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29166666" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22574447" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -532,7 +524,7 @@
     <entry file="jar://E:/Java/src.zip!/java/util/Comparator.java" />
     <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/OfferAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10548">
+        <state relative-caret-position="14832">
           <caret line="837" selection-start-line="837" selection-end-line="837" />
         </state>
       </provider>
@@ -585,17 +577,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/TreeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/KingAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="73" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/TreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding>
+            <element signature="e#138#139#0" expanded="true" />
+            <element signature="e#161#162#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/algorithm/AgainAndAgainAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="829">
+          <caret line="71" column="61" lean-forward="true" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
         </state>
       </provider>
     </entry>
