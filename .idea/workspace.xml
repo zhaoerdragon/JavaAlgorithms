@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55b24c08-2245-43bc-bb69-58782e4f9f4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/xupt/willscorpio/algorithm/AgainAndAgainAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xupt/willscorpio/DayByDayAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/TreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaAlgorithms-master/com/xupt/willscorpio/algorithm/AgainAndAgainAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAlgorithms-master/com/xupt/willscorpio/algorithm/AgainAndAgainAlgorithm.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,66 +22,70 @@
     <session id="1711407624">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="2" />
-          <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.15" value="2" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="25" />
+          <entry key="java" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="25" />
+          <entry key="JAVA" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3765" />
+          <entry key="java" value="5471" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3765" />
+          <entry key="JAVA" value="5471" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/OfferAlgorithm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14832">
-              <caret line="837" selection-start-line="837" selection-end-line="837" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/KingAlgorithm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="73" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/algorithm/AgainAndAgainAlgorithm.java">
+        <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/DayByDayAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="829">
-              <caret line="71" column="61" lean-forward="true" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+            <state relative-caret-position="541">
+              <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://E:/Java/src.zip!/java/lang/String.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38592">
+              <caret line="2221" column="18" selection-start-line="2221" selection-start-column="18" selection-end-line="2221" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://E:/Java/src.zip!/javax/annotation/processing/AbstractProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2880">
+              <caret line="191" column="23" selection-start-line="191" selection-start-column="23" selection-end-line="191" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -151,10 +155,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
               <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-              <folding>
-                <element signature="e#138#139#0" expanded="true" />
-                <element signature="e#161#162#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -171,6 +171,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>destroy</find>
+      <find>Ab</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -193,6 +194,7 @@
         <option value="$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/KingAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/TreeNode.java" />
         <option value="$PROJECT_DIR$/src/com/xupt/willscorpio/algorithm/AgainAndAgainAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/com/xupt/willscorpio/DayByDayAlgorithm.java" />
       </list>
     </option>
   </component>
@@ -203,7 +205,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="329" />
+    <option name="x" value="121" />
     <option name="y" value="-11" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
@@ -213,6 +215,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,26 +234,18 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="willscorpio" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="JavaAlgorithms-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaAlgorithms-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="willscorpio" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535092332392" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535618817744" />
     <property name="last_opened_file_path" value="E:/IDEAProject/PeanutImServer" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
@@ -272,7 +267,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AgainAndAgainAlgorithm">
+  <component name="RunManager" selected="Application.DayByDayAlgorithm">
     <configuration name="AgainAndAgainAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.xupt.willscorpio.algorithm.AgainAndAgainAlgorithm" />
       <module name="JavaAlgorithms-master" />
@@ -286,12 +281,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BitDance2Algorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xupt.willscorpio.utils.BitDance2Algorithm" />
+    <configuration name="DayByDayAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xupt.willscorpio.DayByDayAlgorithm" />
       <module name="JavaAlgorithms-master" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.xupt.willscorpio.utils.*" />
+          <option name="PATTERN" value="com.xupt.willscorpio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -333,19 +328,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.BitDance2Algorithm" />
       <item itemvalue="Application.MainFunction" />
       <item itemvalue="Application.OfferAlgorithm" />
       <item itemvalue="Application.KingAlgorithm" />
       <item itemvalue="Application.AgainAndAgainAlgorithm" />
+      <item itemvalue="Application.DayByDayAlgorithm" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DayByDayAlgorithm" />
         <item itemvalue="Application.AgainAndAgainAlgorithm" />
         <item itemvalue="Application.KingAlgorithm" />
         <item itemvalue="Application.OfferAlgorithm" />
         <item itemvalue="Application.MainFunction" />
-        <item itemvalue="Application.BitDance2Algorithm" />
       </list>
     </recent_temporary>
   </component>
@@ -376,7 +371,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12739871" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13059701" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -385,7 +380,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.22574447" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -520,12 +515,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://E:/Java/src.zip!/java/lang/String.java" />
     <entry file="jar://E:/Java/src.zip!/java/util/Comparator.java" />
     <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/OfferAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14832">
           <caret line="837" selection-start-line="837" selection-end-line="837" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/KingAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="73" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/algorithm/AgainAndAgainAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1278">
+          <caret line="71" column="61" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/DayByDayAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38592">
+          <caret line="2221" column="18" selection-start-line="2221" selection-start-column="18" selection-end-line="2221" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/src.zip!/javax/annotation/processing/AbstractProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2880">
+          <caret line="191" column="23" selection-start-line="191" selection-start-column="23" selection-end-line="191" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -577,28 +609,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/KingAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="73" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/cowguest/TreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding>
-            <element signature="e#138#139#0" expanded="true" />
-            <element signature="e#161#162#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xupt/willscorpio/algorithm/AgainAndAgainAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="829">
-          <caret line="71" column="61" lean-forward="true" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
         </state>
       </provider>
     </entry>
